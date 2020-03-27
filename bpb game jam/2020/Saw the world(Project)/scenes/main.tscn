@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Hintergrund.png" type="Texture" id=2]
@@ -14,14 +14,14 @@
 [ext_resource path="res://sprites/branches/Birken_Ast.png" type="Texture" id=12]
 [ext_resource path="res://sprites/branches/Kirsch_Ast.png" type="Texture" id=13]
 [ext_resource path="res://scenes/branchSprite.gd" type="Script" id=14]
-[ext_resource path="res://sprites/people/kurz1.png" type="Texture" id=15]
-[ext_resource path="res://sprites/people/kurz2.png" type="Texture" id=16]
-[ext_resource path="res://sprites/people/mittellang1.png" type="Texture" id=17]
-[ext_resource path="res://sprites/people/mittellang2.png" type="Texture" id=18]
-[ext_resource path="res://sprites/people/hut2.png" type="Texture" id=19]
-[ext_resource path="res://sprites/people/hut1.png" type="Texture" id=20]
-[ext_resource path="res://sprites/people/lang1.png" type="Texture" id=21]
-[ext_resource path="res://sprites/people/lang2.png" type="Texture" id=22]
+[ext_resource path="res://sprites/people/hut2.png" type="Texture" id=15]
+[ext_resource path="res://sprites/people/hut1.png" type="Texture" id=16]
+[ext_resource path="res://sprites/people/lang1.png" type="Texture" id=17]
+[ext_resource path="res://sprites/people/lang2.png" type="Texture" id=18]
+[ext_resource path="res://sprites/people/kurz1.png" type="Texture" id=19]
+[ext_resource path="res://sprites/people/kurz2.png" type="Texture" id=20]
+[ext_resource path="res://sprites/people/mittellang1.png" type="Texture" id=21]
+[ext_resource path="res://sprites/people/mittellang2.png" type="Texture" id=22]
 [ext_resource path="res://scenes/human.gd" type="Script" id=23]
 [ext_resource path="res://sprites/weapons/Taschenmesser.png" type="Texture" id=24]
 [ext_resource path="res://sprites/weapons/Fuchssäge.png" type="Texture" id=25]
@@ -36,16 +36,18 @@
 [ext_resource path="res://scenes/Stopwatch.gd" type="Script" id=34]
 [ext_resource path="res://fonts/Caliban.ttf" type="DynamicFontData" id=35]
 [ext_resource path="res://scenes/pointLabel.gd" type="Script" id=36]
-[ext_resource path="res://sprites/GUI/Lebensleiste.png" type="Texture" id=37]
-[ext_resource path="res://scenes/Sprite.gd" type="Script" id=38]
-[ext_resource path="res://scenes/Menu.gd" type="Script" id=39]
-[ext_resource path="res://sprites/GUI/UPGRADE block.png" type="Texture" id=40]
+[ext_resource path="res://scenes/sawdustLabel.gd" type="Script" id=37]
+[ext_resource path="res://sprites/GUI/Lebensleiste.png" type="Texture" id=38]
+[ext_resource path="res://scenes/Sprite.gd" type="Script" id=39]
+[ext_resource path="res://scenes/Menu.gd" type="Script" id=40]
 [ext_resource path="res://sprites/GUI/Restart block.png" type="Texture" id=41]
-[ext_resource path="res://sprites/GUI/QUIT block.png" type="Texture" id=42]
-[ext_resource path="res://sprites/GUI/MENU block.png" type="Texture" id=43]
-[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=44]
-[ext_resource path="res://scenes/Highscore.gd" type="Script" id=45]
-[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=46]
+[ext_resource path="res://sprites/GUI/UPGRADE block.png" type="Texture" id=42]
+[ext_resource path="res://sprites/GUI/QUIT block.png" type="Texture" id=43]
+[ext_resource path="res://sprites/GUI/MENU block.png" type="Texture" id=44]
+[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=45]
+[ext_resource path="res://scenes/Highscore.gd" type="Script" id=46]
+[ext_resource path="res://sounds/select.wav" type="AudioStream" id=47]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=48]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -70,7 +72,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
@@ -93,10 +95,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 395.962, 175.891 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -110,30 +112,30 @@ tracks/0/keys = {
 "values": [ Vector2( 551, 629 ), Vector2( 551, 629 ), Vector2( 551, 2629 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "kurz",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "mittellang",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": false,
 "name": "hut",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "lang",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "kurz",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "mittellang",
+"speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": false,
@@ -141,7 +143,7 @@ animations = [ {
 "speed": 0.0
 } ]
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=9]
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 98, 0 )
@@ -155,13 +157,13 @@ angle = 10.0
 angle_random = 1.0
 scale = 0.5
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=2]
 size = 90
 outline_size = 2
 outline_color = Color( 0.443137, 0.184314, 0.184314, 1 )
 font_data = ExtResource( 35 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=3]
 size = 50
 outline_size = 2
 outline_color = Color( 0.486275, 0.223529, 0.223529, 1 )
@@ -198,7 +200,6 @@ __meta__ = {
 z_index = 10
 
 [node name="Tree" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="trunk" type="AnimatedSprite" parent="Tree"]
@@ -207,41 +208,43 @@ animation = "Kirsch"
 centered = false
 
 [node name="branch" type="Area2D" parent="Tree"]
-editor/display_folded = true
-position = Vector2( 522, 629 )
+position = Vector2( 521.548, 628.869 )
 z_index = 4
 script = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="branchSprite" type="AnimatedSprite" parent="Tree/branch"]
 z_index = 7
 z_as_relative = false
-frames = SubResource( 2 )
+frames = SubResource( 4 )
 animation = "Standard"
 centered = false
 script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree/branch"]
 position = Vector2( 128, 80 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="Animation" type="AnimationPlayer" parent="Tree/branch"]
-anims/fall = SubResource( 4 )
+anims/fall = SubResource( 6 )
 
 [node name="human" type="AnimatedSprite" parent="Tree/branch"]
 editor/display_folded = true
-position = Vector2( -1, 22 )
+position = Vector2( -1.29999, 28.6 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 4
-frames = SubResource( 5 )
+frames = SubResource( 7 )
 animation = "lang"
 offset = Vector2( 1160, -350 )
 script = ExtResource( 23 )
 
 [node name="Weapon" type="AnimatedSprite" parent="Tree/branch/human"]
-position = Vector2( -70, -169 )
+position = Vector2( -140, -338 )
 z_index = 6
 z_as_relative = false
-frames = SubResource( 6 )
+frames = SubResource( 8 )
 animation = "Weapons"
 centered = false
 script = ExtResource( 28 )
@@ -253,7 +256,7 @@ amount = 500
 lifetime = 10.0
 speed_scale = 2.0
 local_coords = false
-process_material = SubResource( 7 )
+process_material = SubResource( 9 )
 texture = ExtResource( 29 )
 
 [node name="SawdustTimer" type="Timer" parent="Tree/branch/human/Weapon"]
@@ -277,7 +280,6 @@ stream = ExtResource( 33 )
 script = ExtResource( 34 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="pointLabel" type="Label" parent="HUD"]
 anchor_right = 1.0
@@ -286,7 +288,7 @@ margin_left = 14.0
 margin_top = 110.684
 margin_right = -256.0
 margin_bottom = -758.316
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 1
 valign = 1
@@ -298,15 +300,16 @@ margin_left = 224.0
 margin_top = 35.3
 margin_right = -69.0
 margin_bottom = 98.3
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 3 )
 text = "0"
 align = 2
 valign = 1
+script = ExtResource( 37 )
 
 [node name="lives" type="Sprite" parent="HUD"]
-texture = ExtResource( 37 )
+texture = ExtResource( 38 )
 centered = false
-script = ExtResource( 38 )
+script = ExtResource( 39 )
 
 [node name="Holz" type="Sprite" parent="HUD"]
 position = Vector2( 511.888, 57.707 )
@@ -315,21 +318,9 @@ scale = Vector2( 0.799207, 0.799207 )
 texture = ExtResource( 29 )
 
 [node name="Menu" type="CanvasLayer" parent="."]
-editor/display_folded = true
-script = ExtResource( 39 )
-
-[node name="Upgrade" type="Button" parent="Menu"]
-visible = false
-margin_left = 34.5059
-margin_top = 498.348
-margin_right = 489.506
-margin_bottom = 569.348
-custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 40 )
-flat = true
+script = ExtResource( 40 )
 
 [node name="Restart" type="Button" parent="Menu"]
-visible = false
 margin_left = 36.7781
 margin_top = 388.853
 margin_right = 487.778
@@ -338,21 +329,28 @@ custom_fonts/font = SubResource( 10 )
 icon = ExtResource( 41 )
 flat = true
 
+[node name="Upgrade" type="Button" parent="Menu"]
+margin_left = 34.5059
+margin_top = 498.348
+margin_right = 489.506
+margin_bottom = 569.348
+custom_fonts/font = SubResource( 10 )
+icon = ExtResource( 42 )
+flat = true
+
 [node name="Quit" type="Button" parent="Menu"]
-visible = false
 margin_left = 39.3463
 margin_top = 617.278
 margin_right = 495.346
 margin_bottom = 688.278
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 42 )
+icon = ExtResource( 43 )
 flat = true
 
 [node name="background" type="Sprite" parent="Menu"]
-visible = false
 position = Vector2( 248.476, 505.504 )
 z_index = -1
-texture = ExtResource( 43 )
+texture = ExtResource( 44 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -365,7 +363,7 @@ margin_bottom = 264.0
 custom_fonts/font = SubResource( 11 )
 text = "Time Bonus: "
 valign = 1
-script = ExtResource( 44 )
+script = ExtResource( 45 )
 
 [node name="Highscore" type="Label" parent="Menu"]
 margin_left = 8.0
@@ -376,7 +374,10 @@ custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.337255, 0.388235, 0.847059, 1 )
 text = "Highscore: "
 autowrap = true
-script = ExtResource( 45 )
+script = ExtResource( 46 )
+
+[node name="select" type="AudioStreamPlayer" parent="Menu"]
+stream = ExtResource( 47 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 540, 960 )
@@ -385,19 +386,21 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
-script = ExtResource( 46 )
+script = ExtResource( 48 )
 [connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
-[connection signal="area_exited" from="Tree/branch" to="Tree/branch" method="_on_branch_area_exited"]
 [connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
-[connection signal="cut" from="Tree/branch" to="Camera2D" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
+[connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
-[connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_slash"]
 [connection signal="animation_finished" from="Tree/branch/Animation" to="Tree/branch" method="_on_Animation_animation_finished"]
 [connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
-[connection signal="pressed" from="Menu/Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="mouse_entered" from="Menu/Restart" to="Menu" method="_on_Restart_mouse_entered"]
 [connection signal="pressed" from="Menu/Restart" to="Camera2D" method="_on_Restart_pressed"]
 [connection signal="pressed" from="Menu/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="mouse_entered" from="Menu/Upgrade" to="Menu" method="_on_Upgrade_mouse_entered"]
+[connection signal="pressed" from="Menu/Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="mouse_entered" from="Menu/Quit" to="Menu" method="_on_Quit_mouse_entered"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="TimeBonusCalculated" from="Menu/TimeBonusLabel" to="Menu/Highscore" method="_on_TimeBonusLabel_TimeBonusCalculated"]

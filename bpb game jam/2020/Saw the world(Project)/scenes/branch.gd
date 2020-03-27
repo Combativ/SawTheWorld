@@ -6,6 +6,7 @@ signal cut
 #Variables
 var xDistanceToMouse
 var branchWidth = 558 #Ausgemessen!
+var mouseAboveBranch = false #Für branch_slash
 
 const MAXPOINTS = 10
 var points
@@ -16,9 +17,21 @@ func _ready():
 	#Start Stopwatch for calculating points
 	$PointsStopwatch._reset_time()
 
-func _on_branch_area_entered(area):
-	emit_signal("slash")
+
+
+func _process(delta):
 	
+	#Wenn die Maus über den Stamm fährt
+	if get_local_mouse_position().y < 0 and mouseAboveBranch == false:
+		mouseAboveBranch = true
+		emit_signal("slash")
+		
+	if get_local_mouse_position().y > 100 and mouseAboveBranch == true:  #ACHTUNG Hard-gecodete Zahl!
+		mouseAboveBranch = false
+		emit_signal("slash")
+		
+
+
 func calculate_points():
 	
 	#Get x distance to mouse
@@ -37,10 +50,6 @@ func calculate_time_bonus():
 	TimeBonus = round(TimeBonus)
 	return TimeBonus
 
-
-
-func _on_branch_area_exited(area):
-	emit_signal("slash")
 
 #When Branch is cut
 func _on_Tree_fall():

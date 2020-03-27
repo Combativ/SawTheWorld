@@ -10,7 +10,3 @@ func _process(delta):
 
 func _on_Restart_pressed():
 	pass
-
-
-func _on_branch_cut():
-	pass

@@ -38,7 +38,7 @@ texture = ExtResource( 2 )
 [node name="Trail" type="Particles2D" parent="."]
 z_index = -1
 amount = 1000
-lifetime = 0.3
+lifetime = 0.5
 speed_scale = 2.0
 local_coords = false
 process_material = SubResource( 6 )

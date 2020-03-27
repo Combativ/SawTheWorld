@@ -46,4 +46,7 @@ func _on_Quit_pressed():
 
 
 func _on_Upgrade_pressed():
-	global.WeaponLevel += 1
+	var WeaponPrice = global.Weapons[global.WeaponLevel + 1][1]
+	if global.money >= WeaponPrice:
+		global.WeaponLevel += 1
+		global.money -= WeaponPrice
