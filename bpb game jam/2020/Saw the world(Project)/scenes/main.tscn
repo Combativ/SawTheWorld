@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Hintergrund.png" type="Texture" id=2]
@@ -41,13 +41,16 @@
 [ext_resource path="res://scenes/Sprite.gd" type="Script" id=39]
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=40]
 [ext_resource path="res://sprites/GUI/Restart block.png" type="Texture" id=41]
-[ext_resource path="res://sprites/GUI/UPGRADE block.png" type="Texture" id=42]
-[ext_resource path="res://sprites/GUI/QUIT block.png" type="Texture" id=43]
-[ext_resource path="res://sprites/GUI/MENU block.png" type="Texture" id=44]
-[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=45]
-[ext_resource path="res://scenes/Highscore.gd" type="Script" id=46]
-[ext_resource path="res://sounds/select.wav" type="AudioStream" id=47]
-[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=48]
+[ext_resource path="res://scenes/Restart.gd" type="Script" id=42]
+[ext_resource path="res://sprites/GUI/UPGRADE block.png" type="Texture" id=43]
+[ext_resource path="res://scenes/Upgrade.gd" type="Script" id=44]
+[ext_resource path="res://sprites/GUI/QUIT block.png" type="Texture" id=45]
+[ext_resource path="res://scenes/Quit.gd" type="Script" id=46]
+[ext_resource path="res://sprites/GUI/MENU block.png" type="Texture" id=47]
+[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=48]
+[ext_resource path="res://scenes/Highscore.gd" type="Script" id=49]
+[ext_resource path="res://sounds/select.wav" type="AudioStream" id=50]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=51]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -328,6 +331,7 @@ margin_bottom = 459.853
 custom_fonts/font = SubResource( 10 )
 icon = ExtResource( 41 )
 flat = true
+script = ExtResource( 42 )
 
 [node name="Upgrade" type="Button" parent="Menu"]
 margin_left = 34.5059
@@ -335,8 +339,9 @@ margin_top = 498.348
 margin_right = 489.506
 margin_bottom = 569.348
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 42 )
+icon = ExtResource( 43 )
 flat = true
+script = ExtResource( 44 )
 
 [node name="Quit" type="Button" parent="Menu"]
 margin_left = 39.3463
@@ -344,13 +349,14 @@ margin_top = 617.278
 margin_right = 495.346
 margin_bottom = 688.278
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 43 )
+icon = ExtResource( 45 )
 flat = true
+script = ExtResource( 46 )
 
 [node name="background" type="Sprite" parent="Menu"]
 position = Vector2( 248.476, 505.504 )
 z_index = -1
-texture = ExtResource( 44 )
+texture = ExtResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -363,7 +369,7 @@ margin_bottom = 264.0
 custom_fonts/font = SubResource( 11 )
 text = "Time Bonus: "
 valign = 1
-script = ExtResource( 45 )
+script = ExtResource( 48 )
 
 [node name="Highscore" type="Label" parent="Menu"]
 margin_left = 8.0
@@ -374,10 +380,10 @@ custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.337255, 0.388235, 0.847059, 1 )
 text = "Highscore: "
 autowrap = true
-script = ExtResource( 46 )
+script = ExtResource( 49 )
 
 [node name="select" type="AudioStreamPlayer" parent="Menu"]
-stream = ExtResource( 47 )
+stream = ExtResource( 50 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 540, 960 )
@@ -386,7 +392,7 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
-script = ExtResource( 48 )
+script = ExtResource( 51 )
 [connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
 [connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
@@ -396,11 +402,15 @@ script = ExtResource( 48 )
 [connection signal="slash" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_slash"]
 [connection signal="animation_finished" from="Tree/branch/Animation" to="Tree/branch" method="_on_Animation_animation_finished"]
 [connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
-[connection signal="mouse_entered" from="Menu/Restart" to="Menu" method="_on_Restart_mouse_entered"]
+[connection signal="mouse_entered" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_mouse_exited"]
 [connection signal="pressed" from="Menu/Restart" to="Camera2D" method="_on_Restart_pressed"]
+[connection signal="pressed" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_pressed"]
 [connection signal="pressed" from="Menu/Restart" to="." method="_on_Restart_pressed"]
-[connection signal="mouse_entered" from="Menu/Upgrade" to="Menu" method="_on_Upgrade_mouse_entered"]
+[connection signal="mouse_entered" from="Menu/Upgrade" to="Menu/Upgrade" method="_on_Upgrade_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Upgrade" to="Menu/Upgrade" method="_on_Upgrade_mouse_exited"]
 [connection signal="pressed" from="Menu/Upgrade" to="." method="_on_Upgrade_pressed"]
-[connection signal="mouse_entered" from="Menu/Quit" to="Menu" method="_on_Quit_mouse_entered"]
+[connection signal="mouse_entered" from="Menu/Quit" to="Menu/Quit" method="_on_Quit_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Quit" to="Menu/Quit" method="_on_Quit_mouse_exited"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="TimeBonusCalculated" from="Menu/TimeBonusLabel" to="Menu/Highscore" method="_on_TimeBonusLabel_TimeBonusCalculated"]
