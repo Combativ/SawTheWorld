@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Holzbruch2_sound.wav-f6b9520c68f5761fe527c21d21b75f78.sample"
+
+[deps]
+
+source_file="res://sounds/Holzbruch2_sound.wav"
+dest_files=[ "res://.import/Holzbruch2_sound.wav-f6b9520c68f5761fe527c21d21b75f78.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

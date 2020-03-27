@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/still-pickin.wav-cb7070ab4de6608e6736df7d301b36c2.sample"
+
+[deps]
+
+source_file="res://sounds/still-pickin.wav"
+dest_files=[ "res://.import/still-pickin.wav-cb7070ab4de6608e6736df7d301b36c2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
