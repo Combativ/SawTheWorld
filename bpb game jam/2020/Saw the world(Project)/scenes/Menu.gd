@@ -22,7 +22,7 @@ func _on_branch_cut():
 	$Highscore.show()
 
 func _on_Restart_mouse_entered():
-	$Restart.get_canvas_item().visibility.moudulate.color($Restart.visibility.moudulate.color.darkened(100))
+	#$Restart.get_canvas_item().visibility.moudulate.color($Restart.visibility.moudulate.color.darkened(100))
 	$select.play()
 
 func _on_Upgrade_mouse_entered():
