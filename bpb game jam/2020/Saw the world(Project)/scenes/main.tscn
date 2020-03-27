@@ -396,6 +396,7 @@ script = ExtResource( 51 )
 [connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
 [connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_cut"]
 [connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
