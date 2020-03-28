@@ -38,3 +38,19 @@ func _ready():
 	#Lautstärke verringern
 	player.set_volume_db(-10)
 	player.play()
+
+
+###Functions that have to be accessible from everywhere###
+#func calculate_points():
+#
+#	var MAXPOINTS = 10
+#	var branchWidth = 558 #Ausgemessen!
+#
+#	#Get x distance to mouse
+#	var xDistanceToMouse = abs(get_viewport().get_global_mouse_position().x - find_node("branch").position.x)
+#	#Multipliziere maximal erreichbare Punkte mit Abstand zu Säge
+#	var points = MAXPOINTS * (1 - (xDistanceToMouse / branchWidth))
+#	#Runde diesen Wert
+#	points = round(points)
+#
+#	return points

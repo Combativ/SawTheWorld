@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Hintergrund.png" type="Texture" id=2]
@@ -13,14 +13,14 @@
 [ext_resource path="res://sprites/branches/Birken_Ast.png" type="Texture" id=11]
 [ext_resource path="res://sprites/branches/Kirsch_Ast.png" type="Texture" id=12]
 [ext_resource path="res://scenes/branchSprite.gd" type="Script" id=13]
-[ext_resource path="res://sprites/people/hut2.png" type="Texture" id=14]
-[ext_resource path="res://sprites/people/hut1.png" type="Texture" id=15]
-[ext_resource path="res://sprites/people/lang1.png" type="Texture" id=16]
-[ext_resource path="res://sprites/people/lang2.png" type="Texture" id=17]
-[ext_resource path="res://sprites/people/kurz1.png" type="Texture" id=18]
-[ext_resource path="res://sprites/people/kurz2.png" type="Texture" id=19]
-[ext_resource path="res://sprites/people/mittellang1.png" type="Texture" id=20]
-[ext_resource path="res://sprites/people/mittellang2.png" type="Texture" id=21]
+[ext_resource path="res://sprites/people/lang1.png" type="Texture" id=14]
+[ext_resource path="res://sprites/people/lang2.png" type="Texture" id=15]
+[ext_resource path="res://sprites/people/kurz1.png" type="Texture" id=16]
+[ext_resource path="res://sprites/people/kurz2.png" type="Texture" id=17]
+[ext_resource path="res://sprites/people/mittellang1.png" type="Texture" id=18]
+[ext_resource path="res://sprites/people/mittellang2.png" type="Texture" id=19]
+[ext_resource path="res://sprites/people/hut2.png" type="Texture" id=20]
+[ext_resource path="res://sprites/people/hut1.png" type="Texture" id=21]
 [ext_resource path="res://scenes/human.gd" type="Script" id=22]
 [ext_resource path="res://sprites/weapons/Taschenmesser.png" type="Texture" id=23]
 [ext_resource path="res://sprites/weapons/Fuchssäge.png" type="Texture" id=24]
@@ -33,24 +33,25 @@
 [ext_resource path="res://sounds/Holzbruch1_sound.wav" type="AudioStream" id=31]
 [ext_resource path="res://sounds/gameOver_sound.wav" type="AudioStream" id=32]
 [ext_resource path="res://scenes/Stopwatch.gd" type="Script" id=33]
-[ext_resource path="res://fonts/Caliban.ttf" type="DynamicFontData" id=34]
-[ext_resource path="res://scenes/pointLabel.gd" type="Script" id=35]
-[ext_resource path="res://scenes/sawdustLabel.gd" type="Script" id=36]
-[ext_resource path="res://sprites/GUI/Lebensleiste.png" type="Texture" id=37]
-[ext_resource path="res://scenes/Sprite.gd" type="Script" id=38]
-[ext_resource path="res://scenes/Menu.gd" type="Script" id=39]
-[ext_resource path="res://sprites/GUI/Restart block.png" type="Texture" id=40]
-[ext_resource path="res://scenes/Restart.gd" type="Script" id=41]
-[ext_resource path="res://sprites/GUI/UPGRADE block.png" type="Texture" id=42]
-[ext_resource path="res://scenes/Upgrade.gd" type="Script" id=43]
-[ext_resource path="res://sprites/GUI/QUIT block.png" type="Texture" id=44]
-[ext_resource path="res://scenes/Quit.gd" type="Script" id=45]
-[ext_resource path="res://sprites/GUI/MENU block.png" type="Texture" id=46]
-[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=47]
-[ext_resource path="res://scenes/Highscore.gd" type="Script" id=48]
-[ext_resource path="res://scenes/TreesKilled.gd" type="Script" id=49]
-[ext_resource path="res://sounds/select.wav" type="AudioStream" id=50]
-[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=51]
+[ext_resource path="res://HUD.gd" type="Script" id=34]
+[ext_resource path="res://fonts/Caliban.ttf" type="DynamicFontData" id=35]
+[ext_resource path="res://scenes/pointLabel.gd" type="Script" id=36]
+[ext_resource path="res://scenes/sawdustLabel.gd" type="Script" id=37]
+[ext_resource path="res://sprites/GUI/Lebensleiste.png" type="Texture" id=38]
+[ext_resource path="res://scenes/Sprite.gd" type="Script" id=39]
+[ext_resource path="res://scenes/Menu.gd" type="Script" id=40]
+[ext_resource path="res://sprites/GUI/Restart block.png" type="Texture" id=41]
+[ext_resource path="res://scenes/Restart.gd" type="Script" id=42]
+[ext_resource path="res://sprites/GUI/UPGRADE block.png" type="Texture" id=43]
+[ext_resource path="res://scenes/Upgrade.gd" type="Script" id=44]
+[ext_resource path="res://sprites/GUI/QUIT block.png" type="Texture" id=45]
+[ext_resource path="res://scenes/Quit.gd" type="Script" id=46]
+[ext_resource path="res://sprites/GUI/MENU block.png" type="Texture" id=47]
+[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=48]
+[ext_resource path="res://scenes/Highscore.gd" type="Script" id=49]
+[ext_resource path="res://scenes/TreesKilled.gd" type="Script" id=50]
+[ext_resource path="res://sounds/select.wav" type="AudioStream" id=51]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=52]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -118,24 +119,24 @@ tracks/0/keys = {
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "hut",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "lang",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "kurz",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "mittellang",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "hut",
+"speed": 0.0
 } ]
 
 [sub_resource type="SpriteFrames" id=6]
@@ -164,35 +165,35 @@ scale = 0.5
 size = 90
 outline_size = 2
 outline_color = Color( 0.443137, 0.184314, 0.184314, 1 )
-font_data = ExtResource( 34 )
+font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 50
 outline_size = 2
 outline_color = Color( 0.486275, 0.223529, 0.223529, 1 )
-font_data = ExtResource( 34 )
+font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 64
-font_data = ExtResource( 34 )
+font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 50
 outline_size = 2
 outline_color = Color( 0.529412, 0.0784314, 0.0784314, 1 )
-font_data = ExtResource( 34 )
+font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 35
 outline_size = 1
 outline_color = Color( 0.168627, 0.129412, 0.45098, 1 )
-font_data = ExtResource( 34 )
+font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 18
 outline_size = 1
 outline_color = Color( 0.239216, 0, 0, 1 )
-font_data = ExtResource( 34 )
+font_data = ExtResource( 35 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -206,7 +207,6 @@ __meta__ = {
 }
 
 [node name="Tree" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="trunk" type="AnimatedSprite" parent="Tree"]
@@ -287,6 +287,7 @@ stream = ExtResource( 32 )
 script = ExtResource( 33 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 34 )
 
 [node name="pointLabel" type="Label" parent="HUD"]
 anchor_right = 1.0
@@ -299,7 +300,7 @@ custom_fonts/font = SubResource( 8 )
 text = "0"
 align = 1
 valign = 1
-script = ExtResource( 35 )
+script = ExtResource( 36 )
 
 [node name="sawdustLabel" type="Label" parent="HUD"]
 anchor_right = 1.0
@@ -311,12 +312,12 @@ custom_fonts/font = SubResource( 9 )
 text = "0"
 align = 2
 valign = 1
-script = ExtResource( 36 )
+script = ExtResource( 37 )
 
 [node name="lives" type="Sprite" parent="HUD"]
-texture = ExtResource( 37 )
+texture = ExtResource( 38 )
 centered = false
-script = ExtResource( 38 )
+script = ExtResource( 39 )
 
 [node name="Holz" type="Sprite" parent="HUD"]
 position = Vector2( 511.888, 57.707 )
@@ -325,7 +326,8 @@ scale = Vector2( 0.799207, 0.799207 )
 texture = ExtResource( 28 )
 
 [node name="Menu" type="CanvasLayer" parent="."]
-script = ExtResource( 39 )
+editor/display_folded = true
+script = ExtResource( 40 )
 
 [node name="Restart" type="Button" parent="Menu"]
 margin_left = 36.7781
@@ -333,9 +335,9 @@ margin_top = 388.853
 margin_right = 487.778
 margin_bottom = 459.853
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 40 )
+icon = ExtResource( 41 )
 flat = true
-script = ExtResource( 41 )
+script = ExtResource( 42 )
 
 [node name="Upgrade" type="Button" parent="Menu"]
 margin_left = 34.5059
@@ -343,9 +345,9 @@ margin_top = 498.348
 margin_right = 489.506
 margin_bottom = 569.348
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 42 )
+icon = ExtResource( 43 )
 flat = true
-script = ExtResource( 43 )
+script = ExtResource( 44 )
 
 [node name="Quit" type="Button" parent="Menu"]
 margin_left = 39.3463
@@ -353,14 +355,14 @@ margin_top = 617.278
 margin_right = 495.346
 margin_bottom = 688.278
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 44 )
+icon = ExtResource( 45 )
 flat = true
-script = ExtResource( 45 )
+script = ExtResource( 46 )
 
 [node name="background" type="Sprite" parent="Menu"]
 position = Vector2( 248.476, 505.504 )
 z_index = -1
-texture = ExtResource( 46 )
+texture = ExtResource( 47 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -373,7 +375,7 @@ margin_bottom = 264.0
 custom_fonts/font = SubResource( 11 )
 text = "Time Bonus: "
 valign = 1
-script = ExtResource( 47 )
+script = ExtResource( 48 )
 
 [node name="Highscore" type="Label" parent="Menu"]
 margin_left = 8.0
@@ -384,7 +386,7 @@ custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.337255, 0.388235, 0.847059, 1 )
 text = "Highscore: "
 autowrap = true
-script = ExtResource( 48 )
+script = ExtResource( 49 )
 
 [node name="TreesKilled" type="Label" parent="Menu"]
 margin_left = 279.188
@@ -396,10 +398,10 @@ custom_colors/font_color = Color( 0.784314, 0, 0.164706, 1 )
 text = "Trees killed: "
 valign = 1
 autowrap = true
-script = ExtResource( 49 )
+script = ExtResource( 50 )
 
 [node name="select" type="AudioStreamPlayer" parent="Menu"]
-stream = ExtResource( 50 )
+stream = ExtResource( 51 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 540, 960 )
@@ -408,16 +410,17 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
-script = ExtResource( 51 )
+script = ExtResource( 52 )
 [connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
-[connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_cut"]
-[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="Menu/TreesKilled" method="_on_branch_cut"]
-[connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
-[connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
-[connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
+[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
 [connection signal="slash" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="HUD" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
 [connection signal="animation_finished" from="Tree/branch/Animation" to="Tree/branch" method="_on_Animation_animation_finished"]
 [connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
 [connection signal="mouse_entered" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_mouse_entered"]
