@@ -46,3 +46,7 @@ func Restart_Game():
 	$game/Menu/Restart.connect("pressed", self, "_on_Restart_pressed")
 	$game/Menu/Upgrade.connect("WeaponUpgraded", self, "_on_Upgrade_WeaponUpgraded")
 	$game/Menu/Quit.connect("pressed", self, "_on_Quit_pressed")
+
+#Musik loopen
+func _on_BackgroundMusic_finished():
+	$BackgroundMusic.play()

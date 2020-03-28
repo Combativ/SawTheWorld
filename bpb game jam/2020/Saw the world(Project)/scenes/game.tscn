@@ -328,6 +328,7 @@ scale = Vector2( 0.799207, 0.799207 )
 texture = ExtResource( 28 )
 
 [node name="Menu" type="CanvasLayer" parent="."]
+editor/display_folded = true
 script = ExtResource( 40 )
 
 [node name="Restart" type="Button" parent="Menu"]
