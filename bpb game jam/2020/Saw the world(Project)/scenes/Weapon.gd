@@ -17,16 +17,10 @@ func _process(delta):
 
 
 
-
-#PARTICLES
-
 func _on_branch_slash():
 	#Huii, fliegendes Holz!
 	$sawdust.set_emitting(true)
 	$SawdustTimer.start(0)
-	#Und Sound
-	$Ritsch.set_pitch_scale(rand_range(0.9, 1.1))
-	$Ritsch.play()
 
 
 func _on_SawdustTimer_timeout():

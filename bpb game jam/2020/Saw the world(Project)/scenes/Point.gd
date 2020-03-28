@@ -2,7 +2,7 @@ extends Node2D
 
 #Wie viele Sekunden soll der Punkt zusehen sein?
 var lifetime = 1
-#Wie schnell soll er nach ober gehen?
+#Wie schnell soll er nach oben gehen?
 var speed = 50
 #Wie schnell soll er durchsichtig werden?
 var decay = lifetime
@@ -12,9 +12,9 @@ func _ready():
 	position = get_global_mouse_position()
 	
 	#Calculate points
-	var points = 1
+	var points = get_parent().get_parent().get_node("Tree/branch").calculate_points()
 	#Set right text
-	$Label.set_text(str(points))
+	$Label.set_text("+" + str(points))
 
 func _process(delta):
 	#Move upwards

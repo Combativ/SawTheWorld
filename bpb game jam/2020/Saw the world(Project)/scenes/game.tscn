@@ -28,11 +28,11 @@
 [ext_resource path="res://sprites/weapons/Motorsäge.png" type="Texture" id=26]
 [ext_resource path="res://scenes/Weapon.gd" type="Script" id=27]
 [ext_resource path="res://sprites/holz.png" type="Texture" id=28]
-[ext_resource path="res://sounds/weapons/Laubsäge_hin.wav" type="AudioStream" id=29]
-[ext_resource path="res://sounds/Holzbruch2_sound.wav" type="AudioStream" id=30]
-[ext_resource path="res://sounds/Holzbruch1_sound.wav" type="AudioStream" id=31]
-[ext_resource path="res://sounds/gameOver_sound.wav" type="AudioStream" id=32]
-[ext_resource path="res://scenes/Stopwatch.gd" type="Script" id=33]
+[ext_resource path="res://sounds/Holzbruch2_sound.wav" type="AudioStream" id=29]
+[ext_resource path="res://sounds/Holzbruch1_sound.wav" type="AudioStream" id=30]
+[ext_resource path="res://sounds/gameOver_sound.wav" type="AudioStream" id=31]
+[ext_resource path="res://scenes/Stopwatch.gd" type="Script" id=32]
+[ext_resource path="res://sounds/weapons/Laubsäge_hin.wav" type="AudioStream" id=33]
 [ext_resource path="res://HUD.gd" type="Script" id=34]
 [ext_resource path="res://fonts/Caliban.ttf" type="DynamicFontData" id=35]
 [ext_resource path="res://scenes/pointLabel.gd" type="Script" id=36]
@@ -148,9 +148,11 @@ animations = [ {
 } ]
 
 [sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 1
+emission_sphere_radius = 50.0
 flag_disable_z = true
 spread = 180.0
-gravity = Vector3( 0, 98, 0 )
+gravity = Vector3( 0, 600, 0 )
 initial_velocity = 200.0
 initial_velocity_random = 0.8
 angular_velocity = 100.0
@@ -160,16 +162,17 @@ orbit_velocity_random = 0.0
 angle = 10.0
 angle_random = 1.0
 scale = 0.5
+scale_random = 0.5
 
 [sub_resource type="DynamicFont" id=8]
 size = 90
-outline_size = 2
+outline_size = 3
 outline_color = Color( 0.443137, 0.184314, 0.184314, 1 )
 font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 50
-outline_size = 2
+outline_size = 3
 outline_color = Color( 0.486275, 0.223529, 0.223529, 1 )
 font_data = ExtResource( 35 )
 
@@ -179,13 +182,13 @@ font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 50
-outline_size = 2
+outline_size = 3
 outline_color = Color( 0.529412, 0.0784314, 0.0784314, 1 )
 font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 35
-outline_size = 1
+outline_size = 2
 outline_color = Color( 0.168627, 0.129412, 0.45098, 1 )
 font_data = ExtResource( 35 )
 
@@ -207,7 +210,6 @@ __meta__ = {
 }
 
 [node name="Tree" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="trunk" type="AnimatedSprite" parent="Tree"]
@@ -216,6 +218,7 @@ animation = "Kirsch"
 centered = false
 
 [node name="branch" type="Area2D" parent="Tree"]
+editor/display_folded = true
 position = Vector2( 521.548, 628.869 )
 z_index = 4
 script = ExtResource( 8 )
@@ -240,6 +243,7 @@ shape = SubResource( 3 )
 anims/fall = SubResource( 4 )
 
 [node name="human" type="AnimatedSprite" parent="Tree/branch"]
+editor/display_folded = true
 position = Vector2( -1.29999, 28.6 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 4
@@ -249,6 +253,7 @@ offset = Vector2( 1160, -350 )
 script = ExtResource( 22 )
 
 [node name="Weapon" type="AnimatedSprite" parent="Tree/branch/human"]
+editor/display_folded = true
 position = Vector2( -140, -338 )
 z_index = 6
 z_as_relative = false
@@ -259,10 +264,10 @@ script = ExtResource( 27 )
 
 [node name="sawdust" type="Particles2D" parent="Tree/branch/human/Weapon"]
 position = Vector2( 0, 500 )
+z_index = 1
 emitting = false
 amount = 500
 lifetime = 10.0
-speed_scale = 2.0
 local_coords = false
 process_material = SubResource( 7 )
 texture = ExtResource( 28 )
@@ -271,24 +276,23 @@ texture = ExtResource( 28 )
 wait_time = 0.1
 one_shot = true
 
-[node name="Ritsch" type="AudioStreamPlayer" parent="Tree/branch/human/Weapon"]
-stream = ExtResource( 29 )
-volume_db = -5.0
-
 [node name="Holzbruch2" type="AudioStreamPlayer" parent="Tree/branch"]
-stream = ExtResource( 30 )
+stream = ExtResource( 29 )
 
 [node name="Knochenbruch1" type="AudioStreamPlayer" parent="Tree/branch"]
-stream = ExtResource( 31 )
+stream = ExtResource( 30 )
 
 [node name="gameOver" type="AudioStreamPlayer" parent="Tree/branch"]
-stream = ExtResource( 32 )
+stream = ExtResource( 31 )
 
 [node name="PointsStopwatch" type="Node" parent="Tree/branch"]
-script = ExtResource( 33 )
+script = ExtResource( 32 )
+
+[node name="Ritsch" type="AudioStreamPlayer" parent="Tree"]
+stream = ExtResource( 33 )
+volume_db = -5.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
-editor/display_folded = true
 script = ExtResource( 34 )
 
 [node name="pointLabel" type="Label" parent="HUD"]
@@ -323,7 +327,7 @@ script = ExtResource( 39 )
 
 [node name="Holz" type="Sprite" parent="HUD"]
 position = Vector2( 511.888, 57.707 )
-rotation = 0.174533
+rotation = 0.268781
 scale = Vector2( 0.799207, 0.799207 )
 texture = ExtResource( 28 )
 

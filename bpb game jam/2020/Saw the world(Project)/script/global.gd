@@ -30,28 +30,3 @@ var lives = 0
 
 func _ready():
 	pass
-
-
-	#Music      (https://www.gamefromscratch.com/page/Godot-3-Tutorial-Sound-FX-and-Music.aspx)
-#	var player = AudioStreamPlayer.new()
-#	self.add_child(player)
-#	player.stream = load("res://sounds/still-pickin.wav")
-#	#Lautstärke verringern
-#	player.set_volume_db(-10)
-#	player.play()
-
-
-###Functions that have to be accessible from everywhere###
-#func calculate_points():
-#
-#	var MAXPOINTS = 10
-#	var branchWidth = 558 #Ausgemessen!
-#
-#	#Get x distance to mouse
-#	var xDistanceToMouse = abs(get_viewport().get_global_mouse_position().x - find_node("branch").position.x)
-#	#Multipliziere maximal erreichbare Punkte mit Abstand zu Säge
-#	var points = MAXPOINTS * (1 - (xDistanceToMouse / branchWidth))
-#	#Runde diesen Wert
-#	points = round(points)
-#
-#	return points

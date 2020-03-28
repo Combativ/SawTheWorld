@@ -40,9 +40,15 @@ func _on_Upgrade_mouse_exited():
 signal WeaponUpgraded
 
 func _on_Upgrade_pressed():
+	#Only if UpgradeAvailable
 	if ButtonStatus[1] == true:
+		#Upgrade weapon
 		global.WeaponLevel += 1
+		#subtract money
 		global.money -= WeaponPrice
+		
+		#Update weapon price
+		WeaponPrice = global.Weapons[global.WeaponLevel + 1][1]
 		
 		#Only emit signal if Weapon was actually upgraded
 		emit_signal("WeaponUpgraded")
