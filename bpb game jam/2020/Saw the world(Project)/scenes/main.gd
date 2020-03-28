@@ -34,19 +34,3 @@ func _ready():
 func _process(delta):
 	pass
 	#Debug
-
-func _on_Restart_pressed():
-	global.lives = global.thickness
-	get_tree().reload_current_scene()
-
-
-func _on_Quit_pressed():
-	get_tree().quit()
-
-
-
-func _on_Upgrade_pressed():
-	var WeaponPrice = global.Weapons[global.WeaponLevel + 1][1]
-	if global.money >= WeaponPrice:
-		global.WeaponLevel += 1
-		global.money -= WeaponPrice

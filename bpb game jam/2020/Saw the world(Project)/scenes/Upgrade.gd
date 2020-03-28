@@ -7,3 +7,10 @@ func _on_Upgrade_mouse_entered():
 	get_parent().get_node("select").play()
 func _on_Upgrade_mouse_exited():
 	modulate = color
+
+
+func _on_Upgrade_pressed():
+	var WeaponPrice = global.Weapons[global.WeaponLevel + 1][1]
+	if global.money >= WeaponPrice:
+		global.WeaponLevel += 1
+		global.money -= WeaponPrice

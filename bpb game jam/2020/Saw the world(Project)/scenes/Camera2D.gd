@@ -7,6 +7,3 @@ func _ready():
 func _process(delta):
 	if position.y > 0:
 		position.y -= 20
-
-func _on_Restart_pressed():
-	pass

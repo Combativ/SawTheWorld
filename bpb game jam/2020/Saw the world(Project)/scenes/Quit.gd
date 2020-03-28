@@ -7,3 +7,7 @@ func _on_Quit_mouse_entered():
 	get_parent().get_node("select").play()
 func _on_Quit_mouse_exited():
 	modulate = color
+
+
+func _on_Quit_pressed():
+	get_tree().quit()

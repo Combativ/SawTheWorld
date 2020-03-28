@@ -3,11 +3,12 @@ extends Node
 #For all games
 var money = 0
 var Highscore = 0
+
 var Weapons: Array = [
-				["Taschenmesser", 0],
-				["Fuchssäge", 100],
-				["Kreissäge", 500],
-				["Motorsäge", 2000],
+				["Taschenmesser", 0, 1], #Name, Price, Damage
+				["Fuchssäge", 100, 3],
+				["Kreissäge", 500, 20],
+				["Motorsäge", 2000, 100],
 					]
 var WeaponLevel = 0
 

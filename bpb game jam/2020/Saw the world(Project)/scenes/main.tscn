@@ -75,7 +75,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
@@ -98,10 +98,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 395.962, 175.891 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
@@ -115,7 +115,7 @@ tracks/0/keys = {
 "values": [ Vector2( 551, 629 ), Vector2( 551, 629 ), Vector2( 551, 2629 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": false,
@@ -138,7 +138,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": false,
@@ -146,7 +146,7 @@ animations = [ {
 "speed": 0.0
 } ]
 
-[sub_resource type="ParticlesMaterial" id=9]
+[sub_resource type="ParticlesMaterial" id=7]
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 98, 0 )
@@ -160,13 +160,13 @@ angle = 10.0
 angle_random = 1.0
 scale = 0.5
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=8]
 size = 90
 outline_size = 2
 outline_color = Color( 0.443137, 0.184314, 0.184314, 1 )
 font_data = ExtResource( 35 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=9]
 size = 50
 outline_size = 2
 outline_color = Color( 0.486275, 0.223529, 0.223529, 1 )
@@ -221,24 +221,24 @@ __meta__ = {
 [node name="branchSprite" type="AnimatedSprite" parent="Tree/branch"]
 z_index = 7
 z_as_relative = false
-frames = SubResource( 4 )
+frames = SubResource( 2 )
 animation = "Standard"
 centered = false
 script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree/branch"]
 position = Vector2( 128, 80 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Animation" type="AnimationPlayer" parent="Tree/branch"]
-anims/fall = SubResource( 6 )
+anims/fall = SubResource( 4 )
 
 [node name="human" type="AnimatedSprite" parent="Tree/branch"]
 editor/display_folded = true
 position = Vector2( -1.29999, 28.6 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 4
-frames = SubResource( 7 )
+frames = SubResource( 5 )
 animation = "lang"
 offset = Vector2( 1160, -350 )
 script = ExtResource( 23 )
@@ -247,7 +247,7 @@ script = ExtResource( 23 )
 position = Vector2( -140, -338 )
 z_index = 6
 z_as_relative = false
-frames = SubResource( 8 )
+frames = SubResource( 6 )
 animation = "Weapons"
 centered = false
 script = ExtResource( 28 )
@@ -259,7 +259,7 @@ amount = 500
 lifetime = 10.0
 speed_scale = 2.0
 local_coords = false
-process_material = SubResource( 9 )
+process_material = SubResource( 7 )
 texture = ExtResource( 29 )
 
 [node name="SawdustTimer" type="Timer" parent="Tree/branch/human/Weapon"]
@@ -291,7 +291,7 @@ margin_left = 14.0
 margin_top = 110.684
 margin_right = -256.0
 margin_bottom = -758.316
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 text = "0"
 align = 1
 valign = 1
@@ -303,7 +303,7 @@ margin_left = 224.0
 margin_top = 35.3
 margin_right = -69.0
 margin_bottom = 98.3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 9 )
 text = "0"
 align = 2
 valign = 1
@@ -395,23 +395,21 @@ drag_margin_bottom = 0.0
 script = ExtResource( 51 )
 [connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
 [connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
-[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_cut"]
-[connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
+[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
 [connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_slash"]
 [connection signal="animation_finished" from="Tree/branch/Animation" to="Tree/branch" method="_on_Animation_animation_finished"]
 [connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
 [connection signal="mouse_entered" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_mouse_exited"]
-[connection signal="pressed" from="Menu/Restart" to="Camera2D" method="_on_Restart_pressed"]
 [connection signal="pressed" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_pressed"]
-[connection signal="pressed" from="Menu/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="mouse_entered" from="Menu/Upgrade" to="Menu/Upgrade" method="_on_Upgrade_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/Upgrade" to="Menu/Upgrade" method="_on_Upgrade_mouse_exited"]
-[connection signal="pressed" from="Menu/Upgrade" to="." method="_on_Upgrade_pressed"]
+[connection signal="pressed" from="Menu/Upgrade" to="Menu/Upgrade" method="_on_Upgrade_pressed"]
 [connection signal="mouse_entered" from="Menu/Quit" to="Menu/Quit" method="_on_Quit_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/Quit" to="Menu/Quit" method="_on_Quit_mouse_exited"]
-[connection signal="pressed" from="Menu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="Menu/Quit" method="_on_Quit_pressed"]
 [connection signal="TimeBonusCalculated" from="Menu/TimeBonusLabel" to="Menu/Highscore" method="_on_TimeBonusLabel_TimeBonusCalculated"]

@@ -3,7 +3,7 @@ extends Node2D
 signal fall
 
 #Strength of Weapon
-var strength = 1
+var strength = global.Weapons[global.WeaponLevel][2]
 
 func _ready():
 	
