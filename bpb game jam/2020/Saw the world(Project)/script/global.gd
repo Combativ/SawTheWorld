@@ -24,7 +24,7 @@ var thickness = 30
 var lives = thickness
 
 func _ready():
-	#Music        (https://www.gamefromscratch.com/page/Godot-3-Tutorial-Sound-FX-and-Music.aspx)
+	#Music      (https://www.gamefromscratch.com/page/Godot-3-Tutorial-Sound-FX-and-Music.aspx)
 	var player = AudioStreamPlayer.new()
 	self.add_child(player)
 	player.stream = load("res://sounds/still-pickin.wav")
