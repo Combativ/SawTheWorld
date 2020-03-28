@@ -46,6 +46,8 @@ func _on_Upgrade_pressed():
 		global.WeaponLevel += 1
 		#subtract money
 		global.money -= WeaponPrice
+		#Play Upgrade sound
+		$UpgradeSound.play()
 		
 		#Update weapon price
 		WeaponPrice = global.Weapons[global.WeaponLevel + 1][1]

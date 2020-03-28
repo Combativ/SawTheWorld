@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Hintergrund.png" type="Texture" id=2]
@@ -51,14 +51,15 @@
 [ext_resource path="res://scenes/Restart.gd" type="Script" id=49]
 [ext_resource path="res://sprites/GUI/UPGRADE block.png" type="Texture" id=50]
 [ext_resource path="res://scenes/Upgrade.gd" type="Script" id=51]
-[ext_resource path="res://sprites/GUI/QUIT block.png" type="Texture" id=52]
-[ext_resource path="res://scenes/Quit.gd" type="Script" id=53]
-[ext_resource path="res://sprites/GUI/MENU block.png" type="Texture" id=54]
-[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=55]
-[ext_resource path="res://scenes/Highscore.gd" type="Script" id=56]
-[ext_resource path="res://scenes/TreesKilled.gd" type="Script" id=57]
-[ext_resource path="res://sounds/select.wav" type="AudioStream" id=58]
-[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=59]
+[ext_resource path="res://sounds/Upgrade.wav" type="AudioStream" id=52]
+[ext_resource path="res://sprites/GUI/QUIT block.png" type="Texture" id=53]
+[ext_resource path="res://scenes/Quit.gd" type="Script" id=54]
+[ext_resource path="res://sprites/GUI/MENU block.png" type="Texture" id=55]
+[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=56]
+[ext_resource path="res://scenes/Highscore.gd" type="Script" id=57]
+[ext_resource path="res://scenes/TreesKilled.gd" type="Script" id=58]
+[ext_resource path="res://sounds/select.wav" type="AudioStream" id=59]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=60]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -332,6 +333,7 @@ stream = ExtResource( 40 )
 volume_db = -10.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 script = ExtResource( 41 )
 
 [node name="pointLabel" type="Label" parent="HUD"]
@@ -371,7 +373,6 @@ scale = Vector2( 0.799207, 0.799207 )
 texture = ExtResource( 28 )
 
 [node name="Menu" type="CanvasLayer" parent="."]
-editor/display_folded = true
 script = ExtResource( 47 )
 
 [node name="Restart" type="Button" parent="Menu"]
@@ -394,20 +395,23 @@ icon = ExtResource( 50 )
 flat = true
 script = ExtResource( 51 )
 
+[node name="UpgradeSound" type="AudioStreamPlayer" parent="Menu/Upgrade"]
+stream = ExtResource( 52 )
+
 [node name="Quit" type="Button" parent="Menu"]
 margin_left = 39.3463
 margin_top = 617.278
 margin_right = 495.346
 margin_bottom = 688.278
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 52 )
+icon = ExtResource( 53 )
 flat = true
-script = ExtResource( 53 )
+script = ExtResource( 54 )
 
 [node name="background" type="Sprite" parent="Menu"]
 position = Vector2( 248.476, 505.504 )
 z_index = -1
-texture = ExtResource( 54 )
+texture = ExtResource( 55 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -420,7 +424,7 @@ margin_bottom = 264.0
 custom_fonts/font = SubResource( 11 )
 text = "Time Bonus: "
 valign = 1
-script = ExtResource( 55 )
+script = ExtResource( 56 )
 
 [node name="Highscore" type="Label" parent="Menu"]
 margin_left = 8.0
@@ -431,7 +435,7 @@ custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.337255, 0.388235, 0.847059, 1 )
 text = "Highscore: "
 autowrap = true
-script = ExtResource( 56 )
+script = ExtResource( 57 )
 
 [node name="TreesKilled" type="Label" parent="Menu"]
 margin_left = 279.188
@@ -443,10 +447,10 @@ custom_colors/font_color = Color( 0.784314, 0, 0.164706, 1 )
 text = "Trees killed: "
 valign = 1
 autowrap = true
-script = ExtResource( 57 )
+script = ExtResource( 58 )
 
 [node name="select" type="AudioStreamPlayer" parent="Menu"]
-stream = ExtResource( 58 )
+stream = ExtResource( 59 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 540, 960 )
@@ -455,7 +459,7 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
-script = ExtResource( 59 )
+script = ExtResource( 60 )
 [connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
 [connection signal="cut" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
