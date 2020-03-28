@@ -8,8 +8,3 @@ func _on_Restart_mouse_entered():
 	get_parent().get_node("select").play()
 func _on_Restart_mouse_exited():
 	modulate = color
-
-
-func _on_Restart_pressed():
-	global.lives = global.thickness
-	get_tree().reload_current_scene()

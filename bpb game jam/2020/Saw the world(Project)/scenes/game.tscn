@@ -190,7 +190,7 @@ outline_color = Color( 0.168627, 0.129412, 0.45098, 1 )
 font_data = ExtResource( 35 )
 
 [sub_resource type="DynamicFont" id=13]
-size = 18
+size = 20
 outline_size = 1
 outline_color = Color( 0.239216, 0, 0, 1 )
 font_data = ExtResource( 35 )
@@ -207,6 +207,7 @@ __meta__ = {
 }
 
 [node name="Tree" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="trunk" type="AnimatedSprite" parent="Tree"]
@@ -287,6 +288,7 @@ stream = ExtResource( 32 )
 script = ExtResource( 33 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 script = ExtResource( 34 )
 
 [node name="pointLabel" type="Label" parent="HUD"]
@@ -326,7 +328,6 @@ scale = Vector2( 0.799207, 0.799207 )
 texture = ExtResource( 28 )
 
 [node name="Menu" type="CanvasLayer" parent="."]
-editor/display_folded = true
 script = ExtResource( 40 )
 
 [node name="Restart" type="Button" parent="Menu"]
@@ -425,7 +426,6 @@ script = ExtResource( 52 )
 [connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
 [connection signal="mouse_entered" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_mouse_exited"]
-[connection signal="pressed" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_pressed"]
 [connection signal="mouse_entered" from="Menu/Upgrade" to="Menu/Upgrade" method="_on_Upgrade_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/Upgrade" to="Menu/Upgrade" method="_on_Upgrade_mouse_exited"]
 [connection signal="pressed" from="Menu/Upgrade" to="Menu/Upgrade" method="_on_Upgrade_pressed"]

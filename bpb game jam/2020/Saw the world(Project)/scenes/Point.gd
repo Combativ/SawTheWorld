@@ -15,8 +15,6 @@ func _ready():
 	var points = 1
 	#Set right text
 	$Label.set_text(str(points))
-	
-	print(get_tree().get_root())
 
 func _process(delta):
 	#Move upwards

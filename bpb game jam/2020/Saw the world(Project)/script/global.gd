@@ -29,15 +29,16 @@ var thickness = 0
 var lives = 0
 
 func _ready():
+	pass
 
 
 	#Music      (https://www.gamefromscratch.com/page/Godot-3-Tutorial-Sound-FX-and-Music.aspx)
-	var player = AudioStreamPlayer.new()
-	self.add_child(player)
-	player.stream = load("res://sounds/still-pickin.wav")
-	#Lautstärke verringern
-	player.set_volume_db(-10)
-	player.play()
+#	var player = AudioStreamPlayer.new()
+#	self.add_child(player)
+#	player.stream = load("res://sounds/still-pickin.wav")
+#	#Lautstärke verringern
+#	player.set_volume_db(-10)
+#	player.play()
 
 
 ###Functions that have to be accessible from everywhere###
