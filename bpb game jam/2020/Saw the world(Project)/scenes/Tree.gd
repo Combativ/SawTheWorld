@@ -20,11 +20,6 @@ func _process(delta):
 func _on_branch_slash():
 	if global.lives > 0:
 		global.lives -= strength
-	
-		#Sound
-		#Und ein bisschen Abwechslung reinbringen
-		$Ritsch.set_pitch_scale(rand_range(0.9, 1.1))
-		$Ritsch.play()
 
 
 func _on_branch_area_exited(area):

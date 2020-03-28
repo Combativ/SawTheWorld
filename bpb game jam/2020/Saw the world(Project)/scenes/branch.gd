@@ -26,9 +26,15 @@ func _process(delta):
 		mouseAboveBranch = true
 		emit_signal("slash")
 		
+		#Play sound accordingly to weapon and direction
+		get_node("WeaponSounds/" + str(global.Weapons[global.WeaponLevel][0]) + "_hin").play()
+		
 	if get_local_mouse_position().y > 100 and mouseAboveBranch == true:  #ACHTUNG Hard-gecodete Zahl!
 		mouseAboveBranch = false
 		emit_signal("slash")
+		
+		#Play sound accordingly to weapon and direction
+		get_node("WeaponSounds/" + str(global.Weapons[global.WeaponLevel][0]) + "_zurück").play()
 		
 
 

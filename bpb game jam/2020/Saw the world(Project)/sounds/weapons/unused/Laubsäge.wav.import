@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Twinsäge.wav-133f1e6d5ec561ba4341177375008b3b.sample"
+path="res://.import/Laubsäge.wav-1ac2e9a574e95a72af0344a9384cb3be.sample"
 
 [deps]
 
-source_file="res://sounds/weapons/Twinsäge.wav"
-dest_files=[ "res://.import/Twinsäge.wav-133f1e6d5ec561ba4341177375008b3b.sample" ]
+source_file="res://sounds/weapons/unused/Laubsäge.wav"
+dest_files=[ "res://.import/Laubsäge.wav-1ac2e9a574e95a72af0344a9384cb3be.sample" ]
 
 [params]
 

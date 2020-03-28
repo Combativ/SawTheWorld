@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Schrotsäge.wav-0e04820e46ed0620a1bc995a982b5f91.sample"
+
+[deps]
+
+source_file="res://sounds/weapons/unused/Schrotsäge.wav"
+dest_files=[ "res://.import/Schrotsäge.wav-0e04820e46ed0620a1bc995a982b5f91.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -6,9 +6,9 @@ var Highscore = 0
 
 var Weapons: Array = [
 			["Taschenmesser", 0, 1], #Name, Price, Damage
-			["Fuchssäge", 100, 3],
+			["Fuchsschwanzsäge", 100, 3],
 			["Kreissäge", 500, 20],
-			["Motorsäge", 2000, 100],
+			["Kettensäge", 2000, 100],
 			["Unobtainable", pow(9, 9), 9000]
 					]
 var WeaponLevel = 0
