@@ -5,7 +5,7 @@ func _process(delta):
 	set_text(str(global.money))
 
 func _on_branch_slash():
-	global.money += 1
+	global.money += global.Weapons[global.WeaponLevel][2]
 
 func _on_branch_cut():
 	#Punkte für Schnelligkeit

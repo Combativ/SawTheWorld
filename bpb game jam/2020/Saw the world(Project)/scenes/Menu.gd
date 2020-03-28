@@ -8,6 +8,7 @@ func _ready():
 	$background.hide()
 	$TimeBonusLabel.hide()
 	$Highscore.hide()
+	$TreesKilled.hide()
 
 
 func _on_branch_cut():
@@ -17,3 +18,4 @@ func _on_branch_cut():
 	$background.show()
 	$TimeBonusLabel.show()
 	$Highscore.show()
+	$TreesKilled.show()

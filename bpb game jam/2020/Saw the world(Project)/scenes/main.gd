@@ -31,6 +31,12 @@ func _ready():
 	#Now choose one!
 	global.PeopleType = People[randi() % People.size()]
 
+
+	#Calculate thickness according to Weapon damage and trees killed
+	global.thickness = 20 + (global.TreesKilled * 2) + (global.Weapons[global.WeaponLevel][2] * 10)
+	#How many lives has the branch left?
+	global.lives = global.thickness
+
 func _process(delta):
 	pass
 	#Debug

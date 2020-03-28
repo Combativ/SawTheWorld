@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Hintergrund.png" type="Texture" id=2]
@@ -49,8 +49,9 @@
 [ext_resource path="res://sprites/GUI/MENU block.png" type="Texture" id=47]
 [ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=48]
 [ext_resource path="res://scenes/Highscore.gd" type="Script" id=49]
-[ext_resource path="res://sounds/select.wav" type="AudioStream" id=50]
-[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=51]
+[ext_resource path="res://scenes/TreesKilled.gd" type="Script" id=50]
+[ext_resource path="res://sounds/select.wav" type="AudioStream" id=51]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=52]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -188,6 +189,12 @@ outline_size = 1
 outline_color = Color( 0.168627, 0.129412, 0.45098, 1 )
 font_data = ExtResource( 35 )
 
+[sub_resource type="DynamicFont" id=13]
+size = 18
+outline_size = 1
+outline_color = Color( 0.239216, 0, 0, 1 )
+font_data = ExtResource( 35 )
+
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -228,6 +235,7 @@ centered = false
 script = ExtResource( 14 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree/branch"]
+visible = false
 position = Vector2( 128, 80 )
 shape = SubResource( 3 )
 
@@ -235,7 +243,6 @@ shape = SubResource( 3 )
 anims/fall = SubResource( 4 )
 
 [node name="human" type="AnimatedSprite" parent="Tree/branch"]
-editor/display_folded = true
 position = Vector2( -1.29999, 28.6 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 4
@@ -284,7 +291,6 @@ stream = ExtResource( 33 )
 script = ExtResource( 34 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="pointLabel" type="Label" parent="HUD"]
 anchor_right = 1.0
@@ -384,8 +390,20 @@ text = "Highscore: "
 autowrap = true
 script = ExtResource( 49 )
 
+[node name="TreesKilled" type="Label" parent="Menu"]
+margin_left = 279.188
+margin_top = 251.228
+margin_right = 551.188
+margin_bottom = 275.228
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0.784314, 0, 0.164706, 1 )
+text = "Trees killed: "
+valign = 1
+autowrap = true
+script = ExtResource( 50 )
+
 [node name="select" type="AudioStreamPlayer" parent="Menu"]
-stream = ExtResource( 50 )
+stream = ExtResource( 51 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 540, 960 )
@@ -394,15 +412,16 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
-script = ExtResource( 51 )
+script = ExtResource( 52 )
 [connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
-[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
-[connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_cut"]
-[connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
+[connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="Menu/TreesKilled" method="_on_branch_cut"]
+[connection signal="slash" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
-[connection signal="slash" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
 [connection signal="animation_finished" from="Tree/branch/Animation" to="Tree/branch" method="_on_Animation_animation_finished"]
 [connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
 [connection signal="mouse_entered" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_mouse_entered"]

@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
-var down = Vector2(-40, -169)
-var up = Vector2(-75, -369)
+var down = Vector2(-40, -169)   #Magic numbers
+var up = Vector2(-75, -369)     #Magic numbers
 
 func _ready():
 	set_animation("Weapons")
