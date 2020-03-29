@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/weapons/Taschenmesser.png" type="Texture" id=1]
+[ext_resource path="res://scenes/weapons/weapon.gd" type="Script" id=2]
+
+[node name="Taschenmesser" type="Sprite"]
+texture = ExtResource( 1 )
+offset = Vector2( -84, -100 )
+script = ExtResource( 2 )

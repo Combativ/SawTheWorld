@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Twinsaege.wav-51312e814b7f77bc0b48137ac8be3289.sample"
+
+[deps]
+
+source_file="res://sounds/weapons/unused/Twinsaege.wav"
+dest_files=[ "res://.import/Twinsaege.wav-51312e814b7f77bc0b48137ac8be3289.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

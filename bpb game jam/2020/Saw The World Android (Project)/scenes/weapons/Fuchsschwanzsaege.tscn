@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/weapons/Fuchsschwanzsaege.png" type="Texture" id=1]
+[ext_resource path="res://scenes/weapons/weapon.gd" type="Script" id=2]
+
+[node name="Fuchsschwanzsaege" type="Sprite"]
+texture = ExtResource( 1 )
+offset = Vector2( -58, 63 )
+script = ExtResource( 2 )

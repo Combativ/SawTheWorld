@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Kreissaege_zurueck.wav-bcebc497e1b9111d6d6ce72ae1b35d10.sample"
+
+[deps]
+
+source_file="res://sounds/weapons/Kreissaege_zurueck.wav"
+dest_files=[ "res://.import/Kreissaege_zurueck.wav-bcebc497e1b9111d6d6ce72ae1b35d10.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

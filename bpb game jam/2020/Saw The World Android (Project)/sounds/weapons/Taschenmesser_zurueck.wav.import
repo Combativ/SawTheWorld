@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Taschenmesser_zurueck.wav-c538ffd1be1bf349d8038dd2792877da.sample"
+
+[deps]
+
+source_file="res://sounds/weapons/Taschenmesser_zurueck.wav"
+dest_files=[ "res://.import/Taschenmesser_zurueck.wav-c538ffd1be1bf349d8038dd2792877da.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

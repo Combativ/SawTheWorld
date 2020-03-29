@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Kettensaege_zurueck.wav-d603c9bca826d018c649b7399c053775.sample"
+
+[deps]
+
+source_file="res://sounds/weapons/Kettensaege_zurueck.wav"
+dest_files=[ "res://.import/Kettensaege_zurueck.wav-d603c9bca826d018c649b7399c053775.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
