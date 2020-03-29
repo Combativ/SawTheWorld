@@ -4,6 +4,7 @@ extends Node2D
 var Trees: Array
 var People: Array
 
+
 func _ready():
 	
 	#Get a random seed
@@ -20,16 +21,8 @@ func _ready():
 	#Define Trunks and Branches
 	global.TrunkType = global.TreeType + "_Baum"
 	global.BranchType = global.TreeType + "_Ast"
-	
-	
-	#An Array of people
-	People = ["hut",
-			"kurz",
-			"lang",
-			"mittellang"]
-			
-	#Now choose one!
-	global.PeopleType = People[randi() % People.size()]
+
+
 
 
 	#Calculate thickness according to Weapon damage and trees killed

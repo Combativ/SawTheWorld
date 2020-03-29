@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Hintergrund.png" type="Texture" id=2]
@@ -13,51 +13,52 @@
 [ext_resource path="res://sprites/branches/Kirsch_Ast.png" type="Texture" id=11]
 [ext_resource path="res://sprites/branches/Eukalyptus_Ast.png" type="Texture" id=12]
 [ext_resource path="res://scenes/branchSprite.gd" type="Script" id=13]
-[ext_resource path="res://sprites/people/lang1.png" type="Texture" id=14]
-[ext_resource path="res://sprites/people/lang2.png" type="Texture" id=15]
-[ext_resource path="res://sprites/people/kurz1.png" type="Texture" id=16]
-[ext_resource path="res://sprites/people/kurz2.png" type="Texture" id=17]
-[ext_resource path="res://sprites/people/mittellang1.png" type="Texture" id=18]
-[ext_resource path="res://sprites/people/mittellang2.png" type="Texture" id=19]
-[ext_resource path="res://sprites/people/hut2.png" type="Texture" id=20]
-[ext_resource path="res://sprites/people/hut1.png" type="Texture" id=21]
-[ext_resource path="res://scenes/human.gd" type="Script" id=22]
-[ext_resource path="res://sprites/weapons/Taschenmesser.png" type="Texture" id=23]
-[ext_resource path="res://sprites/weapons/Fuchssäge.png" type="Texture" id=24]
-[ext_resource path="res://sprites/weapons/Kreissäge.png" type="Texture" id=25]
-[ext_resource path="res://sprites/weapons/Motorsäge.png" type="Texture" id=26]
-[ext_resource path="res://scenes/Weapon.gd" type="Script" id=27]
-[ext_resource path="res://sprites/holz.png" type="Texture" id=28]
-[ext_resource path="res://sounds/Holzbruch2_sound.wav" type="AudioStream" id=29]
-[ext_resource path="res://sounds/Holzbruch1_sound.wav" type="AudioStream" id=30]
-[ext_resource path="res://sounds/gameOver_sound.wav" type="AudioStream" id=31]
-[ext_resource path="res://scenes/Stopwatch.gd" type="Script" id=32]
-[ext_resource path="res://sounds/weapons/Fuchsschwanzsäge_hin.wav" type="AudioStream" id=33]
-[ext_resource path="res://sounds/weapons/Fuchsschwanzsäge_zurück.wav" type="AudioStream" id=34]
-[ext_resource path="res://sounds/weapons/Kettensäge_hin.wav" type="AudioStream" id=35]
-[ext_resource path="res://sounds/weapons/Kettensäge_zurück.wav" type="AudioStream" id=36]
-[ext_resource path="res://sounds/weapons/Kreissäge_hin.wav" type="AudioStream" id=37]
-[ext_resource path="res://sounds/weapons/Kreissäge_zurück.wav" type="AudioStream" id=38]
-[ext_resource path="res://sounds/weapons/Taschenmesser_hin.wav" type="AudioStream" id=39]
-[ext_resource path="res://sounds/weapons/Taschenmesser_zurück.wav" type="AudioStream" id=40]
-[ext_resource path="res://HUD.gd" type="Script" id=41]
-[ext_resource path="res://fonts/planetbe.ttf" type="DynamicFontData" id=42]
-[ext_resource path="res://scenes/pointLabel.gd" type="Script" id=43]
-[ext_resource path="res://scenes/sawdustLabel.gd" type="Script" id=44]
-[ext_resource path="res://sprites/GUI/Lebensleiste.png" type="Texture" id=45]
-[ext_resource path="res://scenes/Sprite.gd" type="Script" id=46]
-[ext_resource path="res://scenes/Menu.gd" type="Script" id=47]
-[ext_resource path="res://sprites/GUI/MenuButton(noTEXT).png" type="Texture" id=48]
-[ext_resource path="res://scenes/Restart.gd" type="Script" id=49]
-[ext_resource path="res://scenes/Upgrade.gd" type="Script" id=50]
-[ext_resource path="res://sounds/Upgrade.wav" type="AudioStream" id=51]
-[ext_resource path="res://scenes/Quit.gd" type="Script" id=52]
-[ext_resource path="res://sprites/GUI/MENU-Background_noTEXT.png" type="Texture" id=53]
-[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=54]
-[ext_resource path="res://scenes/Highscore.gd" type="Script" id=55]
-[ext_resource path="res://scenes/TreesKilled.gd" type="Script" id=56]
-[ext_resource path="res://sounds/select.wav" type="AudioStream" id=57]
-[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=58]
+[ext_resource path="res://scenes/human2.gd" type="Script" id=14]
+[ext_resource path="res://sprites/people/lang1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/people/lang2.png" type="Texture" id=16]
+[ext_resource path="res://sprites/people/kurz1.png" type="Texture" id=17]
+[ext_resource path="res://sprites/people/kurz2.png" type="Texture" id=18]
+[ext_resource path="res://sprites/people/mittellang1.png" type="Texture" id=19]
+[ext_resource path="res://sprites/people/mittellang2.png" type="Texture" id=20]
+[ext_resource path="res://sprites/people/hut2.png" type="Texture" id=21]
+[ext_resource path="res://sprites/people/hut1.png" type="Texture" id=22]
+[ext_resource path="res://scenes/human.gd" type="Script" id=23]
+[ext_resource path="res://sprites/weapons/Taschenmesser.png" type="Texture" id=24]
+[ext_resource path="res://sprites/weapons/Fuchssäge.png" type="Texture" id=25]
+[ext_resource path="res://sprites/weapons/Kreissäge.png" type="Texture" id=26]
+[ext_resource path="res://sprites/weapons/Motorsäge.png" type="Texture" id=27]
+[ext_resource path="res://scenes/Weapon.gd" type="Script" id=28]
+[ext_resource path="res://sprites/holz.png" type="Texture" id=29]
+[ext_resource path="res://sounds/Holzbruch2_sound.wav" type="AudioStream" id=30]
+[ext_resource path="res://sounds/Holzbruch1_sound.wav" type="AudioStream" id=31]
+[ext_resource path="res://sounds/gameOver_sound.wav" type="AudioStream" id=32]
+[ext_resource path="res://scenes/Stopwatch.gd" type="Script" id=33]
+[ext_resource path="res://sounds/weapons/Fuchsschwanzsäge_hin.wav" type="AudioStream" id=34]
+[ext_resource path="res://sounds/weapons/Fuchsschwanzsäge_zurück.wav" type="AudioStream" id=35]
+[ext_resource path="res://sounds/weapons/Kettensäge_hin.wav" type="AudioStream" id=36]
+[ext_resource path="res://sounds/weapons/Kettensäge_zurück.wav" type="AudioStream" id=37]
+[ext_resource path="res://sounds/weapons/Kreissäge_hin.wav" type="AudioStream" id=38]
+[ext_resource path="res://sounds/weapons/Kreissäge_zurück.wav" type="AudioStream" id=39]
+[ext_resource path="res://sounds/weapons/Taschenmesser_hin.wav" type="AudioStream" id=40]
+[ext_resource path="res://sounds/weapons/Taschenmesser_zurück.wav" type="AudioStream" id=41]
+[ext_resource path="res://HUD.gd" type="Script" id=42]
+[ext_resource path="res://fonts/planetbe.ttf" type="DynamicFontData" id=43]
+[ext_resource path="res://scenes/pointLabel.gd" type="Script" id=44]
+[ext_resource path="res://scenes/sawdustLabel.gd" type="Script" id=45]
+[ext_resource path="res://sprites/GUI/Lebensleiste.png" type="Texture" id=46]
+[ext_resource path="res://scenes/Sprite.gd" type="Script" id=47]
+[ext_resource path="res://scenes/Menu.gd" type="Script" id=48]
+[ext_resource path="res://sprites/GUI/MenuButton(noTEXT).png" type="Texture" id=49]
+[ext_resource path="res://scenes/Restart.gd" type="Script" id=50]
+[ext_resource path="res://scenes/Upgrade.gd" type="Script" id=51]
+[ext_resource path="res://sounds/Upgrade.wav" type="AudioStream" id=52]
+[ext_resource path="res://scenes/Quit.gd" type="Script" id=53]
+[ext_resource path="res://sprites/GUI/MENU-Background_noTEXT.png" type="Texture" id=54]
+[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=55]
+[ext_resource path="res://scenes/Highscore.gd" type="Script" id=56]
+[ext_resource path="res://scenes/TreesKilled.gd" type="Script" id=57]
+[ext_resource path="res://sounds/select.wav" type="AudioStream" id=58]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=59]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -124,22 +125,22 @@ tracks/0/keys = {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "lang",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "kurz",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "mittellang",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": false,
 "name": "hut",
 "speed": 0.0
@@ -147,7 +148,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": false,
 "name": "Weapons",
 "speed": 0.0
@@ -175,52 +176,53 @@ size = 64
 outline_size = 6
 outline_color = Color( 0.443137, 0.184314, 0.184314, 1 )
 extra_spacing_char = 2
-font_data = ExtResource( 42 )
+font_data = ExtResource( 43 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 46
 outline_size = 4
 outline_color = Color( 0.486275, 0.223529, 0.223529, 1 )
 extra_spacing_char = 2
-font_data = ExtResource( 42 )
+font_data = ExtResource( 43 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 64
-font_data = ExtResource( 42 )
+font_data = ExtResource( 43 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=11]
 size = 34
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_char = 9
-font_data = ExtResource( 42 )
+font_data = ExtResource( 43 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=12]
 size = 31
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_char = 2
-font_data = ExtResource( 42 )
+font_data = ExtResource( 43 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=13]
 size = 37
 outline_size = 5
 outline_color = Color( 0.529412, 0.0784314, 0.0784314, 1 )
 extra_spacing_char = 2
-font_data = ExtResource( 42 )
+font_data = ExtResource( 43 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=14]
 size = 27
 outline_size = 4
 outline_color = Color( 0.168627, 0.129412, 0.45098, 1 )
 extra_spacing_char = 3
-font_data = ExtResource( 42 )
+font_data = ExtResource( 43 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=15]
+size = 18
 outline_size = 3
 outline_color = Color( 0.239216, 0, 0, 1 )
 extra_spacing_char = 2
-font_data = ExtResource( 42 )
+font_data = ExtResource( 43 )
 
 [node name="game" type="Node2D"]
 script = ExtResource( 1 )
@@ -265,15 +267,17 @@ shape = SubResource( 3 )
 [node name="Animation" type="AnimationPlayer" parent="Tree/branch"]
 anims/fall = SubResource( 4 )
 
-[node name="human" type="AnimatedSprite" parent="Tree/branch"]
-editor/display_folded = true
+[node name="human" type="Node2D" parent="Tree/branch"]
 position = Vector2( -1.29999, 28.6 )
 scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 14 )
+
+[node name="human" type="AnimatedSprite" parent="Tree/branch/human"]
 z_index = 4
 frames = SubResource( 5 )
 animation = "lang"
 offset = Vector2( 1160, -350 )
-script = ExtResource( 22 )
+script = ExtResource( 23 )
 
 [node name="Weapon" type="AnimatedSprite" parent="Tree/branch/human"]
 editor/display_folded = true
@@ -283,7 +287,7 @@ z_as_relative = false
 frames = SubResource( 6 )
 animation = "Weapons"
 centered = false
-script = ExtResource( 27 )
+script = ExtResource( 28 )
 
 [node name="sawdust" type="Particles2D" parent="Tree/branch/human/Weapon"]
 position = Vector2( 0, 500 )
@@ -293,63 +297,64 @@ amount = 500
 lifetime = 10.0
 local_coords = false
 process_material = SubResource( 7 )
-texture = ExtResource( 28 )
+texture = ExtResource( 29 )
 
 [node name="SawdustTimer" type="Timer" parent="Tree/branch/human/Weapon"]
 wait_time = 0.1
 one_shot = true
 
 [node name="Holzbruch2" type="AudioStreamPlayer" parent="Tree/branch"]
-stream = ExtResource( 29 )
+stream = ExtResource( 30 )
 volume_db = -5.0
 
 [node name="Knochenbruch1" type="AudioStreamPlayer" parent="Tree/branch"]
-stream = ExtResource( 30 )
+stream = ExtResource( 31 )
 
 [node name="gameOver" type="AudioStreamPlayer" parent="Tree/branch"]
-stream = ExtResource( 31 )
+stream = ExtResource( 32 )
 volume_db = -5.0
 
 [node name="PointsStopwatch" type="Node" parent="Tree/branch"]
-script = ExtResource( 32 )
+script = ExtResource( 33 )
 
 [node name="WeaponSounds" type="Node" parent="Tree/branch"]
 editor/display_folded = true
 
 [node name="Fuchsschwanzsäge_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
-stream = ExtResource( 33 )
-volume_db = -10.0
-
-[node name="Fuchsschwanzsäge_zurück" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
 stream = ExtResource( 34 )
 volume_db = -10.0
 
-[node name="Kettensäge_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+[node name="Fuchsschwanzsäge_zurück" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
 stream = ExtResource( 35 )
 volume_db = -10.0
 
-[node name="Kettensäge_zurück" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+[node name="Kettensäge_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
 stream = ExtResource( 36 )
 volume_db = -10.0
 
-[node name="Kreissäge_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+[node name="Kettensäge_zurück" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
 stream = ExtResource( 37 )
 volume_db = -10.0
 
-[node name="Kreissäge_zurück" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+[node name="Kreissäge_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
 stream = ExtResource( 38 )
 volume_db = -10.0
 
-[node name="Taschenmesser_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+[node name="Kreissäge_zurück" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
 stream = ExtResource( 39 )
 volume_db = -10.0
 
-[node name="Taschenmesser_zurück" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+[node name="Taschenmesser_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
 stream = ExtResource( 40 )
 volume_db = -10.0
 
+[node name="Taschenmesser_zurück" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+stream = ExtResource( 41 )
+volume_db = -10.0
+
 [node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource( 41 )
+editor/display_folded = true
+script = ExtResource( 42 )
 
 [node name="pointLabel" type="Label" parent="HUD"]
 anchor_right = 1.0
@@ -362,7 +367,7 @@ custom_fonts/font = SubResource( 8 )
 text = "0"
 align = 1
 valign = 1
-script = ExtResource( 43 )
+script = ExtResource( 44 )
 
 [node name="sawdustLabel" type="Label" parent="HUD"]
 anchor_right = 1.0
@@ -374,22 +379,23 @@ custom_fonts/font = SubResource( 9 )
 text = "0"
 align = 2
 valign = 1
-script = ExtResource( 44 )
+script = ExtResource( 45 )
 
 [node name="lives" type="Sprite" parent="HUD"]
 z_index = -1
-texture = ExtResource( 45 )
+texture = ExtResource( 46 )
 centered = false
-script = ExtResource( 46 )
+script = ExtResource( 47 )
 
 [node name="Holz" type="Sprite" parent="HUD"]
 position = Vector2( 512.838, 38.707 )
 rotation = 0.268781
 scale = Vector2( 0.799207, 0.799207 )
-texture = ExtResource( 28 )
+texture = ExtResource( 29 )
 
 [node name="Menu" type="CanvasLayer" parent="."]
-script = ExtResource( 47 )
+editor/display_folded = true
+script = ExtResource( 48 )
 
 [node name="Restart" type="Button" parent="Menu"]
 editor/display_folded = true
@@ -398,17 +404,17 @@ margin_top = 389.0
 margin_right = 493.0
 margin_bottom = 493.0
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 48 )
+icon = ExtResource( 49 )
 flat = true
 align = 0
-script = ExtResource( 49 )
+script = ExtResource( 50 )
 
 [node name="RESTART" type="Label" parent="Menu/Restart"]
 margin_left = 18.2065
 margin_top = 5.84064
 margin_right = 435.206
 margin_bottom = 103.841
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 11 )
 text = ">      RESTART"
 valign = 1
 
@@ -419,19 +425,19 @@ margin_top = 498.348
 margin_right = 489.506
 margin_bottom = 569.348
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 48 )
+icon = ExtResource( 49 )
 flat = true
-script = ExtResource( 50 )
+script = ExtResource( 51 )
 
 [node name="UpgradeSound" type="AudioStreamPlayer" parent="Menu/Upgrade"]
-stream = ExtResource( 51 )
+stream = ExtResource( 52 )
 
 [node name="UPGRADE" type="Label" parent="Menu/Upgrade"]
 margin_left = 18.3275
 margin_top = 5.41327
 margin_right = 410.328
 margin_bottom = 103.413
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 11 )
 text = ">      UPGRADE"
 valign = 1
 
@@ -442,16 +448,16 @@ margin_top = 617.278
 margin_right = 495.346
 margin_bottom = 688.278
 custom_fonts/font = SubResource( 10 )
-icon = ExtResource( 48 )
+icon = ExtResource( 49 )
 flat = true
-script = ExtResource( 52 )
+script = ExtResource( 53 )
 
 [node name="QUIT" type="Label" parent="Menu/Quit"]
 margin_left = 18.9194
 margin_top = 4.6673
 margin_right = 416.919
 margin_bottom = 102.667
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 11 )
 text = ">         QUIT"
 valign = 1
 
@@ -460,7 +466,7 @@ editor/display_folded = true
 position = Vector2( 245, 510 )
 scale = Vector2( 0.9125, 0.966667 )
 z_index = -1
-texture = ExtResource( 53 )
+texture = ExtResource( 54 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -470,7 +476,7 @@ margin_left = -249.46
 margin_top = -227.272
 margin_right = 418.54
 margin_bottom = -129.272
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 12 )
 text = "CONGRATULATIONS, YOU DIED!"
 valign = 1
 
@@ -479,36 +485,36 @@ margin_left = 12.9679
 margin_top = 184.226
 margin_right = 502.968
 margin_bottom = 254.226
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 13 )
 text = "Time Bonus: "
 valign = 1
-script = ExtResource( 54 )
+script = ExtResource( 55 )
 
 [node name="Highscore" type="Label" parent="Menu"]
 margin_left = 8.0
 margin_top = 6.09996
 margin_right = 221.0
 margin_bottom = 95.1
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0.337255, 0.388235, 0.847059, 1 )
 text = "Highscore: "
 autowrap = true
-script = ExtResource( 55 )
+script = ExtResource( 56 )
 
 [node name="TreesKilled" type="Label" parent="Menu"]
 margin_left = 272.397
 margin_top = 250.0
 margin_right = 544.397
 margin_bottom = 280.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 1, 0.172549, 0.172549, 1 )
 text = "Trees killed: "
 valign = 1
 autowrap = true
-script = ExtResource( 56 )
+script = ExtResource( 57 )
 
 [node name="select" type="AudioStreamPlayer" parent="Menu"]
-stream = ExtResource( 57 )
+stream = ExtResource( 58 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 540, 960 )
@@ -517,17 +523,17 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
-script = ExtResource( 58 )
+script = ExtResource( 59 )
 [connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
-[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
-[connection signal="cut" from="Tree/branch" to="Menu/TreesKilled" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_cut"]
-[connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
+[connection signal="cut" from="Tree/branch" to="Menu/TreesKilled" method="_on_branch_cut"]
 [connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="HUD" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_slash"]
-[connection signal="slash" from="Tree/branch" to="HUD" method="_on_branch_slash"]
 [connection signal="animation_finished" from="Tree/branch/Animation" to="Tree/branch" method="_on_Animation_animation_finished"]
 [connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
 [connection signal="mouse_entered" from="Menu/Restart" to="Menu/Restart" method="_on_Restart_mouse_entered"]

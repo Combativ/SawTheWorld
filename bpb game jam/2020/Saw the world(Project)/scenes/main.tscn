@@ -1,21 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Control.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Cursor.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sounds/select.wav" type="AudioStream" id=3]
-[ext_resource path="res://sounds/still-pickin.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/select.wav" type="AudioStream" id=2]
+[ext_resource path="res://sounds/still-pickin.wav" type="AudioStream" id=3]
+[ext_resource path="res://scenes/Trail(Cursor).gd" type="Script" id=4]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.968627, 1, 0, 0, 0.96875, 1, 0, 1 )
 
 [node name="Global control" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Cursor" parent="." instance=ExtResource( 2 )]
-z_index = 10
-
 [node name="click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 2 )
 pitch_scale = 1.5
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 autoplay = true
+
+[node name="Trail(Cursor)" type="Line2D" parent="."]
+z_index = 100
+width = 20.0
+gradient = SubResource( 1 )
+texture_mode = 33620226
+script = ExtResource( 4 )
 [connection signal="finished" from="BackgroundMusic" to="." method="_on_BackgroundMusic_finished"]

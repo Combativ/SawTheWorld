@@ -4,6 +4,7 @@ extends Node
 var money = 0
 var Highscore = 0
 
+##Weapons##
 var Weapons: Array = [
 			["Taschenmesser", 0, 1], #Name, Price, Damage
 			["Fuchsschwanzsäge", 100, 3],
@@ -12,6 +13,44 @@ var Weapons: Array = [
 			["Unobtainable", pow(9, 9), 9000]
 					]
 var WeaponLevel = 0
+
+
+##Customizable character##
+
+#Preload all human sprites
+var hairstyles = [
+		preload("res://scenes/character/hairstyles/hairstyle1.tscn"),
+		preload("res://scenes/character/hairstyles/hairstyle2.tscn"),
+		preload("res://scenes/character/hairstyles/hairstyle3.tscn"),
+		preload("res://scenes/character/hairstyles/hairstyle4.tscn"),
+				]
+var skintones = [
+		preload("res://scenes/character/skintones/skintone1.tscn"),
+			]
+var trousers = [
+		preload("res://scenes/character/trousers/trouser1.tscn"),
+		preload("res://scenes/character/trousers/trouser2.tscn"),
+		preload("res://scenes/character/trousers/trouser3.tscn"),
+		preload("res://scenes/character/trousers/trouser4.tscn"),
+			]
+var pullovers = [
+		preload("res://scenes/character/pullovers/pullover1.tscn"),
+		preload("res://scenes/character/pullovers/pullover2.tscn"),
+		preload("res://scenes/character/pullovers/pullover3.tscn"),
+		preload("res://scenes/character/pullovers/pullover4.tscn"),
+			]
+var footwear = [
+		preload("res://scenes/character/footwear/footwear1.tscn"),
+		preload("res://scenes/character/footwear/footwear2.tscn"),
+		preload("res://scenes/character/footwear/footwear3.tscn"),
+		preload("res://scenes/character/footwear/footwear4.tscn"),
+			]
+
+
+#For later use in main (standard values)
+var character = []
+
+
 
 
 ###FOR ONE GAME###
