@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/Damage.gd" type="Script" id=1]
-[ext_resource path="res://fonts/Caliban.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/planetbe.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 3

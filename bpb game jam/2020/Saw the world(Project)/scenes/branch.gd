@@ -21,21 +21,32 @@ func _ready():
 
 func _process(delta):
 	
-	#Wenn die Maus über den Stamm fährt
-	if get_local_mouse_position().y < 0 and mouseAboveBranch == false:
-		mouseAboveBranch = true
-		emit_signal("slash")
-		
-		#Play sound accordingly to weapon and direction
-		get_node("WeaponSounds/" + str(global.Weapons[global.WeaponLevel][0]) + "_hin").play()
-		
-	if get_local_mouse_position().y > 100 and mouseAboveBranch == true:  #ACHTUNG Hard-gecodete Zahl!
-		mouseAboveBranch = false
-		emit_signal("slash")
-		
-		#Play sound accordingly to weapon and direction
-		get_node("WeaponSounds/" + str(global.Weapons[global.WeaponLevel][0]) + "_zurück").play()
-		
+	#If tree is still alive
+	if global.lives > 0:
+		#Wenn die Maus über den Stamm fährt
+		if get_local_mouse_position().y < 0 and mouseAboveBranch == false:
+			mouseAboveBranch = true
+			emit_signal("slash")
+
+
+			#Play sound accordingly to weapon and direction
+			var sound_hin = get_node("WeaponSounds/" + str(global.Weapons[global.WeaponLevel][0]) + "_hin")
+			#(randomize the pitch for variety)
+			sound_hin.set_pitch_scale(rand_range(0.95, 1.05))
+			sound_hin.play()
+
+		if get_local_mouse_position().y > 100 and mouseAboveBranch == true:  #ACHTUNG Hard-gecodete Zahl!
+			mouseAboveBranch = false
+			emit_signal("slash")
+
+
+			#Play sound accordingly to weapon and direction
+			var sound_zurueck = get_node("WeaponSounds/" + str(global.Weapons[global.WeaponLevel][0]) + "_zurück")
+			#(randomize the pitch for variety)
+			sound_zurueck.set_pitch_scale(rand_range(0.95, 1.05))
+			sound_zurueck.play()
+
+
 
 
 func calculate_points():
@@ -46,6 +57,9 @@ func calculate_points():
 	points = MAXPOINTS * (1 - (xDistanceToMouse / branchWidth))
 	#Runde diesen Wert
 	points = round(points)
+	#Multipliziere mit WeaponLevel für Fortschritt
+	#(WeaponLevel + 1 weil es bei erster Waffe 0 ist)
+	points = points * (global.Weapons[global.WeaponLevel][2])
 	
 	return points
 	
