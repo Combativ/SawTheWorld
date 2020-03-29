@@ -45,15 +45,15 @@
 [ext_resource path="res://fonts/planetbe.ttf" type="DynamicFontData" id=43]
 [ext_resource path="res://scenes/pointLabel.gd" type="Script" id=44]
 [ext_resource path="res://scenes/sawdustLabel.gd" type="Script" id=45]
-[ext_resource path="res://sprites/GUI/Lebensleiste.png" type="Texture" id=46]
+[ext_resource path="res://sprites/GUI/healthbar.png" type="Texture" id=46]
 [ext_resource path="res://scenes/Sprite.gd" type="Script" id=47]
 [ext_resource path="res://scenes/Menu.gd" type="Script" id=48]
-[ext_resource path="res://sprites/GUI/MenuButton(noTEXT).png" type="Texture" id=49]
+[ext_resource path="res://sprites/GUI/Button_Empty.png" type="Texture" id=49]
 [ext_resource path="res://scenes/Restart.gd" type="Script" id=50]
 [ext_resource path="res://scenes/Upgrade.gd" type="Script" id=51]
 [ext_resource path="res://sounds/Upgrade.wav" type="AudioStream" id=52]
 [ext_resource path="res://scenes/Quit.gd" type="Script" id=53]
-[ext_resource path="res://sprites/GUI/MENU-Background_noTEXT.png" type="Texture" id=54]
+[ext_resource path="res://sprites/GUI/Menu_Background.png" type="Texture" id=54]
 [ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=55]
 [ext_resource path="res://scenes/Highscore.gd" type="Script" id=56]
 [ext_resource path="res://scenes/TreesKilled.gd" type="Script" id=57]
@@ -185,36 +185,36 @@ outline_color = Color( 0.486275, 0.223529, 0.223529, 1 )
 extra_spacing_char = 2
 font_data = ExtResource( 43 )
 
-[sub_resource type="DynamicFont" id=10]
-size = 64
-font_data = ExtResource( 43 )
-
 [sub_resource type="DynamicFont" id=11]
 size = 34
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
-extra_spacing_char = 9
+extra_spacing_char = 20
+font_data = ExtResource( 43 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 64
 font_data = ExtResource( 43 )
 
 [sub_resource type="DynamicFont" id=12]
-size = 31
+size = 34
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
-extra_spacing_char = 2
+extra_spacing_char = 7
 font_data = ExtResource( 43 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 37
 outline_size = 5
 outline_color = Color( 0.529412, 0.0784314, 0.0784314, 1 )
-extra_spacing_char = 2
+extra_spacing_char = 4
 font_data = ExtResource( 43 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 27
 outline_size = 4
 outline_color = Color( 0.168627, 0.129412, 0.45098, 1 )
-extra_spacing_char = 3
+extra_spacing_char = 6
 font_data = ExtResource( 43 )
 
 [sub_resource type="DynamicFont" id=15]
@@ -236,6 +236,7 @@ __meta__ = {
 }
 
 [node name="Tree" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="trunk" type="AnimatedSprite" parent="Tree"]
@@ -244,6 +245,7 @@ animation = "Kirsch"
 centered = false
 
 [node name="branch" type="Area2D" parent="Tree"]
+editor/display_folded = true
 position = Vector2( 521.548, 628.869 )
 z_index = 4
 script = ExtResource( 8 )
@@ -268,6 +270,7 @@ shape = SubResource( 3 )
 anims/fall = SubResource( 4 )
 
 [node name="human" type="Node2D" parent="Tree/branch"]
+editor/display_folded = true
 position = Vector2( -1.29999, 28.6 )
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 14 )
@@ -353,16 +356,15 @@ stream = ExtResource( 41 )
 volume_db = -10.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
-editor/display_folded = true
 script = ExtResource( 42 )
 
 [node name="pointLabel" type="Label" parent="HUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.20001
-margin_top = 82.8
+margin_top = 90.8
 margin_right = -263.8
-margin_bottom = -772.2
+margin_bottom = -764.2
 custom_fonts/font = SubResource( 8 )
 text = "0"
 align = 1
@@ -371,10 +373,10 @@ script = ExtResource( 44 )
 
 [node name="sawdustLabel" type="Label" parent="HUD"]
 anchor_right = 1.0
-margin_left = 232.008
-margin_top = -0.532169
-margin_right = -60.9919
-margin_bottom = 76.4678
+margin_left = 228.225
+margin_top = 23.2438
+margin_right = -64.7745
+margin_bottom = 100.244
 custom_fonts/font = SubResource( 9 )
 text = "0"
 align = 2
@@ -388,42 +390,38 @@ centered = false
 script = ExtResource( 47 )
 
 [node name="Holz" type="Sprite" parent="HUD"]
-position = Vector2( 512.838, 38.707 )
+position = Vector2( 511.217, 64.6444 )
 rotation = 0.268781
 scale = Vector2( 0.799207, 0.799207 )
 texture = ExtResource( 29 )
 
 [node name="Menu" type="CanvasLayer" parent="."]
-editor/display_folded = true
 script = ExtResource( 48 )
 
 [node name="Restart" type="Button" parent="Menu"]
-editor/display_folded = true
-margin_left = 37.0
-margin_top = 389.0
-margin_right = 493.0
-margin_bottom = 493.0
-custom_fonts/font = SubResource( 10 )
+margin_left = 34.7441
+margin_top = 431.186
+margin_right = 508.744
+margin_bottom = 520.186
 icon = ExtResource( 49 )
 flat = true
 align = 0
 script = ExtResource( 50 )
 
 [node name="RESTART" type="Label" parent="Menu/Restart"]
-margin_left = 18.2065
-margin_top = 5.84064
-margin_right = 435.206
-margin_bottom = 103.841
+margin_left = 16.0
+margin_right = 459.0
+margin_bottom = 84.0
 custom_fonts/font = SubResource( 11 )
-text = ">      RESTART"
+text = "restart!"
+align = 1
 valign = 1
 
 [node name="Upgrade" type="Button" parent="Menu"]
-editor/display_folded = true
 margin_left = 34.5059
-margin_top = 498.348
-margin_right = 489.506
-margin_bottom = 569.348
+margin_top = 528.922
+margin_right = 508.506
+margin_bottom = 632.922
 custom_fonts/font = SubResource( 10 )
 icon = ExtResource( 49 )
 flat = true
@@ -433,38 +431,38 @@ script = ExtResource( 51 )
 stream = ExtResource( 52 )
 
 [node name="UPGRADE" type="Label" parent="Menu/Upgrade"]
-margin_left = 18.3275
-margin_top = 5.41327
-margin_right = 410.328
-margin_bottom = 103.413
+margin_left = 8.0
+margin_top = 11.0
+margin_right = 467.0
+margin_bottom = 78.0
 custom_fonts/font = SubResource( 11 )
-text = ">      UPGRADE"
+text = "upgrade"
+align = 1
 valign = 1
 
 [node name="Quit" type="Button" parent="Menu"]
-editor/display_folded = true
-margin_left = 39.3463
-margin_top = 617.278
-margin_right = 495.346
-margin_bottom = 688.278
+margin_left = 35.9168
+margin_top = 633.276
+margin_right = 509.917
+margin_bottom = 737.276
 custom_fonts/font = SubResource( 10 )
 icon = ExtResource( 49 )
 flat = true
 script = ExtResource( 53 )
 
 [node name="QUIT" type="Label" parent="Menu/Quit"]
-margin_left = 18.9194
-margin_top = 4.6673
-margin_right = 416.919
-margin_bottom = 102.667
+margin_left = 8.0
+margin_top = 9.0
+margin_right = 466.0
+margin_bottom = 81.0
 custom_fonts/font = SubResource( 11 )
-text = ">         QUIT"
+text = "quit"
+align = 1
 valign = 1
 
 [node name="background" type="Sprite" parent="Menu"]
-editor/display_folded = true
-position = Vector2( 245, 510 )
-scale = Vector2( 0.9125, 0.966667 )
+position = Vector2( 270, 530 )
+scale = Vector2( 0.9, 0.9 )
 z_index = -1
 texture = ExtResource( 54 )
 __meta__ = {
@@ -472,12 +470,14 @@ __meta__ = {
 }
 
 [node name="label" type="Label" parent="Menu/background"]
-margin_left = -249.46
-margin_top = -227.272
-margin_right = 418.54
-margin_bottom = -129.272
+margin_left = -300.0
+margin_top = -227.0
+margin_right = 300.0
+margin_bottom = -111.0
 custom_fonts/font = SubResource( 12 )
-text = "CONGRATULATIONS, YOU DIED!"
+text = "CONGRATULATIONS,
+YOU DIED!"
+align = 1
 valign = 1
 
 [node name="TimeBonusLabel" type="Label" parent="Menu"]
@@ -503,9 +503,9 @@ script = ExtResource( 56 )
 
 [node name="TreesKilled" type="Label" parent="Menu"]
 margin_left = 272.397
-margin_top = 250.0
+margin_top = 263.0
 margin_right = 544.397
-margin_bottom = 280.0
+margin_bottom = 293.0
 custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 1, 0.172549, 0.172549, 1 )
 text = "Trees killed: "

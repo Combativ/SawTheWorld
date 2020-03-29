@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MENU block.png-b90b5127e3c2570fee53341de20549bb.stex"
+path="res://.import/Upgrade_Interface.png-85b9bd618010ddfb8e950c26e550013d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/GUI/MENU block.png"
-dest_files=[ "res://.import/MENU block.png-b90b5127e3c2570fee53341de20549bb.stex" ]
+source_file="res://sprites/GUI/Upgrade_Interface.png"
+dest_files=[ "res://.import/Upgrade_Interface.png-85b9bd618010ddfb8e950c26e550013d.stex" ]
 
 [params]
 

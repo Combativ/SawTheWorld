@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/COOL block.png-5943d84a8b6ce322c47af9137bb57a89.stex"
+path="res://.import/healthbar.png-f62793b7e91bb15e3aa035a766f677c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/GUI/COOL block.png"
-dest_files=[ "res://.import/COOL block.png-5943d84a8b6ce322c47af9137bb57a89.stex" ]
+source_file="res://sprites/GUI/healthbar.png"
+dest_files=[ "res://.import/healthbar.png-f62793b7e91bb15e3aa035a766f677c6.stex" ]
 
 [params]
 
