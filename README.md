@@ -1,5 +1,9 @@
 # Saw the World
 
+The game executables as well as the godot source code for every three platforms (Windows, Linux, Android) are in "/bpb game jam/2020/"
+
+
+
 ##Licences##
 
 -Sounds-
