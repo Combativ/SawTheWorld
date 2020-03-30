@@ -124,7 +124,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 angle = 10.0
 angle_random = 1.0
-scale = 0.5
+scale = 0.2
 scale_random = 0.5
 
 [sub_resource type="DynamicFont" id=6]
@@ -193,18 +193,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="right side" type="Sprite" parent="Environment"]
-position = Vector2( 1080, 54 )
-z_index = -10
-texture = ExtResource( 2 )
-centered = false
-
-[node name="left side" type="Sprite" parent="Environment"]
-position = Vector2( -1080, -54 )
-z_index = -10
-texture = ExtResource( 2 )
-centered = false
-
 [node name="Tree" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
@@ -248,7 +236,7 @@ z_as_relative = false
 script = ExtResource( 15 )
 
 [node name="sawdust" type="Particles2D" parent="Tree/branch/human/Weapon"]
-position = Vector2( 0, 500 )
+position = Vector2( 0, 100 )
 z_index = 1
 emitting = false
 amount = 500
@@ -311,12 +299,14 @@ stream = ExtResource( 28 )
 volume_db = -10.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 script = ExtResource( 29 )
 
 [node name="pointLabel" type="Label" parent="HUD"]
-margin_top = 203.069
-margin_right = 542.952
-margin_bottom = 398.069
+margin_left = 4.31689
+margin_top = 131.84
+margin_right = 547.269
+margin_bottom = 326.84
 custom_fonts/font = SubResource( 6 )
 text = "0"
 align = 1
@@ -324,10 +314,10 @@ valign = 1
 script = ExtResource( 31 )
 
 [node name="sawdustLabel" type="Label" parent="HUD"]
-margin_left = 430.335
-margin_top = 55.0083
-margin_right = 969.335
-margin_bottom = 195.008
+margin_left = 423.86
+margin_top = 85.2269
+margin_right = 962.86
+margin_bottom = 225.227
 custom_fonts/font = SubResource( 7 )
 text = "0"
 align = 2
@@ -341,7 +331,7 @@ centered = false
 script = ExtResource( 34 )
 
 [node name="Holz" type="Sprite" parent="HUD"]
-position = Vector2( 1024.86, 132.019 )
+position = Vector2( 1024.86, 162.238 )
 rotation = 0.268781
 scale = Vector2( 1.6, 1.6 )
 texture = ExtResource( 16 )
@@ -432,10 +422,10 @@ align = 1
 valign = 1
 
 [node name="TimeBonusLabel" type="Label" parent="Menu"]
-margin_left = 18.2422
-margin_top = 493.325
-margin_right = 583.242
-margin_bottom = 606.325
+margin_left = 281.575
+margin_top = 497.642
+margin_right = 846.575
+margin_bottom = 610.642
 custom_fonts/font = SubResource( 11 )
 text = "Time Bonus: "
 valign = 1
@@ -444,8 +434,8 @@ script = ExtResource( 42 )
 [node name="Highscore" type="Label" parent="Menu"]
 margin_left = 8.0
 margin_top = 6.0
-margin_right = 549.0
-margin_bottom = 185.0
+margin_right = 801.0
+margin_bottom = 89.0
 custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.533333, 0.568627, 0.878431, 1 )
 text = "Highscore: "

@@ -6,11 +6,15 @@ var TrailLength = 10
 
 
 func _process(delta):
-	point = get_global_mouse_position()
-	add_point(point)
+	if Input.is_mouse_button_pressed(1):
+		point = get_global_mouse_position()
+		add_point(point)
+	else:
+		clear_points()
 	
 	while get_point_count() > TrailLength:
 		remove_point(0)
+
 
 
 #New wait(s) function
