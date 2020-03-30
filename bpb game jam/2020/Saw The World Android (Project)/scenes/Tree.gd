@@ -5,7 +5,7 @@ signal fall
 var TreeAlive = true
 
 #Strength of Weapon
-var strength = global.Weapons[global.WeaponLevel][2]
+var strength = global.Weapons[data.savedData["WeaponLevel"]][2]
 
 func _ready():
 	

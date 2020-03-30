@@ -6,12 +6,12 @@ var color = modulate
 var ButtonStatus = [false, false]  #MouseOver, UpgradeReady
 
 #Get Weapon price from global script
-var WeaponPrice = global.Weapons[global.WeaponLevel + 1][1]
+var WeaponPrice = global.Weapons[data.savedData["WeaponLevel"] + 1][1]
 
 func _process(delta):
 
 	#Set UpgradeReady to true if Money is enough
-	if global.money >= WeaponPrice:
+	if data.savedData["Money"] >= WeaponPrice:
 		ButtonStatus[1] = true
 	else:
 		ButtonStatus[1] = false
@@ -30,7 +30,7 @@ func _on_Upgrade_mouse_entered():
 	
 	#Play select sound if Button not disabled
 	if ButtonStatus[1] == true:
-		get_parent().get_node("select").play()
+		get_parent().get_parent().get_node("select").play()
 	
 func _on_Upgrade_mouse_exited():
 	#Update ButtonStatus
@@ -43,14 +43,14 @@ func _on_Upgrade_pressed():
 	#Only if UpgradeAvailable
 	if ButtonStatus[1] == true:
 		#Upgrade weapon
-		global.WeaponLevel += 1
+		data.savedData["WeaponLevel"] += 1
 		#subtract money
-		global.money -= WeaponPrice
+		data.savedData["Money"] -= WeaponPrice
 		#Play Upgrade sound
 		$UpgradeSound.play()
 		
 		#Update weapon price
-		WeaponPrice = global.Weapons[global.WeaponLevel + 1][1]
+		WeaponPrice = global.Weapons[data.savedData["WeaponLevel"] + 1][1]
 		
 		#Only emit signal if Weapon was actually upgraded
 		emit_signal("WeaponUpgraded")

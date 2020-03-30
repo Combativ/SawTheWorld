@@ -1,8 +1,5 @@
 extends Node
 
-###FOR ALL GAMES###
-var money = 0
-var Highscore = 0
 
 ##Weapons##
 var Weapons: Array = [
@@ -12,7 +9,6 @@ var Weapons: Array = [
 			["Kettensaege", 2000, 100],
 			["Unobtainable", pow(9, 9), 9000]
 					]
-var WeaponLevel = 0
 
 
 ##Customizable character##
@@ -67,8 +63,6 @@ var TrunkType = "Standard_Baum"
 var BranchType = "Standard_Ast"
 var PeopleType = "hut"
 
-#How many trees has the player killed?
-var TreesKilled = 0
 #How thiccc is the branch? (Gets calculated in game node)
 var thickness = 0
 #Store remaining lives in separate variable 
@@ -76,4 +70,4 @@ var thickness = 0
 var lives = 0
 
 func _ready():
-	pass
+	data.loadGame()

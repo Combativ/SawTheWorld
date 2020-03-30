@@ -13,7 +13,7 @@
 [ext_resource path="res://sprites/branches/Kirsch_Ast.png" type="Texture" id=11]
 [ext_resource path="res://sprites/branches/Eukalyptus_Ast.png" type="Texture" id=12]
 [ext_resource path="res://scenes/branchSprite.gd" type="Script" id=13]
-[ext_resource path="res://scenes/human2.gd" type="Script" id=14]
+[ext_resource path="res://scenes/human.gd" type="Script" id=14]
 [ext_resource path="res://scenes/Weapon.gd" type="Script" id=15]
 [ext_resource path="res://sprites/holz.png" type="Texture" id=16]
 [ext_resource path="res://sounds/Holzbruch2_sound.wav" type="AudioStream" id=17]
@@ -110,7 +110,7 @@ tracks/0/keys = {
 "values": [ Vector2( 551, 629 ), Vector2( 551, 629 ), Vector2( 551, 2629 ) ]
 }
 
-[sub_resource type="ParticlesMaterial" id=7]
+[sub_resource type="ParticlesMaterial" id=5]
 emission_shape = 1
 emission_sphere_radius = 50.0
 flag_disable_z = true
@@ -127,53 +127,53 @@ angle_random = 1.0
 scale = 0.5
 scale_random = 0.5
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=6]
 size = 128
 outline_size = 6
 outline_color = Color( 0.443137, 0.184314, 0.184314, 1 )
 extra_spacing_char = 2
 font_data = ExtResource( 30 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=7]
 size = 92
 outline_size = 4
 outline_color = Color( 0.486275, 0.223529, 0.223529, 1 )
 extra_spacing_char = 2
 font_data = ExtResource( 30 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=8]
 size = 64
 font_data = ExtResource( 30 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=9]
 size = 68
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_char = 20
 font_data = ExtResource( 30 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=10]
 size = 68
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_char = 7
 font_data = ExtResource( 30 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=11]
 size = 74
 outline_size = 5
 outline_color = Color( 0.529412, 0.0784314, 0.0784314, 1 )
 extra_spacing_char = 4
 font_data = ExtResource( 30 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=12]
 size = 54
 outline_size = 4
 outline_color = Color( 0.168627, 0.129412, 0.45098, 1 )
 extra_spacing_char = 6
 font_data = ExtResource( 30 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=13]
 size = 36
 outline_size = 3
 outline_color = Color( 0.380392, 0.109804, 0.109804, 1 )
@@ -193,7 +193,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="right side" type="Sprite" parent="Environment"]
+position = Vector2( 1080, 54 )
+z_index = -10
+texture = ExtResource( 2 )
+centered = false
+
+[node name="left side" type="Sprite" parent="Environment"]
+position = Vector2( -1080, -54 )
+z_index = -10
+texture = ExtResource( 2 )
+centered = false
+
 [node name="Tree" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="trunk" type="AnimatedSprite" parent="Tree"]
@@ -242,7 +255,7 @@ emitting = false
 amount = 500
 lifetime = 10.0
 local_coords = false
-process_material = SubResource( 7 )
+process_material = SubResource( 5 )
 texture = ExtResource( 16 )
 
 [node name="SawdustTimer" type="Timer" parent="Tree/branch/human/Weapon"]
@@ -305,19 +318,18 @@ script = ExtResource( 29 )
 margin_top = 203.069
 margin_right = 542.952
 margin_bottom = 398.069
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "0"
 align = 1
 valign = 1
 script = ExtResource( 31 )
 
 [node name="sawdustLabel" type="Label" parent="HUD"]
-anchor_right = 1.0
 margin_left = 430.335
 margin_top = 55.0083
-margin_right = -110.665
+margin_right = 969.335
 margin_bottom = 195.008
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
 text = "0"
 align = 2
 valign = 1
@@ -344,11 +356,12 @@ z_index = -1
 texture = ExtResource( 36 )
 
 [node name="Upgrade" type="Button" parent="Menu/background"]
+editor/display_folded = true
 margin_left = -465.498
 margin_top = 25.8811
 margin_right = 470.502
 margin_bottom = 197.881
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 8 )
 icon = ExtResource( 37 )
 flat = true
 script = ExtResource( 38 )
@@ -361,7 +374,7 @@ margin_left = 208.954
 margin_top = 23.3032
 margin_right = 688.954
 margin_bottom = 127.303
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 9 )
 text = "upgrade"
 align = 1
 valign = 1
@@ -382,7 +395,7 @@ margin_left = 204.651
 margin_top = 20.5056
 margin_right = 691.651
 margin_bottom = 124.506
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 9 )
 text = "restart!"
 align = 1
 valign = 1
@@ -393,7 +406,7 @@ margin_left = -468.611
 margin_top = 211.445
 margin_right = 467.389
 margin_bottom = 383.445
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 8 )
 icon = ExtResource( 37 )
 flat = true
 script = ExtResource( 41 )
@@ -403,7 +416,7 @@ margin_left = 208.954
 margin_top = 31.556
 margin_right = 666.954
 margin_bottom = 135.556
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 9 )
 text = "quit"
 align = 1
 valign = 1
@@ -413,7 +426,7 @@ margin_left = -418.83
 margin_top = -390.634
 margin_right = 422.17
 margin_bottom = -179.634
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 10 )
 text = "CONGRATULATIONS,
 YOU DIED!"
 align = 1
@@ -424,7 +437,7 @@ margin_left = 18.2422
 margin_top = 493.325
 margin_right = 583.242
 margin_bottom = 606.325
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 11 )
 text = "Time Bonus: "
 valign = 1
 script = ExtResource( 42 )
@@ -434,7 +447,7 @@ margin_left = 8.0
 margin_top = 6.0
 margin_right = 549.0
 margin_bottom = 185.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.533333, 0.568627, 0.878431, 1 )
 text = "Highscore: "
 autowrap = true
@@ -445,7 +458,7 @@ margin_left = 541.848
 margin_top = 643.589
 margin_right = 1073.85
 margin_bottom = 721.589
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.878431, 0.419608, 0.419608, 1 )
 text = "Trees killed: "
 valign = 1
@@ -464,15 +477,15 @@ drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 script = ExtResource( 46 )
 [connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
-[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
-[connection signal="cut" from="Tree/branch" to="Menu/TreesKilled" method="_on_branch_cut"]
-[connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
 [connection signal="cut" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_cut"]
-[connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
-[connection signal="slash" from="Tree/branch" to="HUD" method="_on_branch_slash"]
+[connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="Menu/TreesKilled" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
 [connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="HUD" method="_on_branch_slash"]
 [connection signal="animation_finished" from="Tree/branch/Animation" to="Tree/branch" method="_on_Animation_animation_finished"]
 [connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
 [connection signal="mouse_entered" from="Menu/background/Upgrade" to="Menu/background/Upgrade" method="_on_Upgrade_mouse_entered"]

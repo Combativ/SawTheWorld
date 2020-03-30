@@ -19,7 +19,10 @@ pitch_scale = 1.5
 stream = ExtResource( 3 )
 autoplay = true
 
-[node name="Trail(Cursor)" type="Line2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Trail(Cursor)" type="Line2D" parent="CanvasLayer"]
 z_index = 100
 width = 20.0
 gradient = SubResource( 1 )

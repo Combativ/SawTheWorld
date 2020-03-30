@@ -16,7 +16,7 @@ func _ready():
 	position = Vector2(posX, posY)
 	
 	#Calculate damage
-	var damage = global.Weapons[global.WeaponLevel][2]
+	var damage = global.Weapons[data.savedData["WeaponLevel"]][2]
 	#Set right text
 	$Label.set_text("-" + str(damage))
 

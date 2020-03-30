@@ -26,7 +26,7 @@ func _ready():
 
 
 	#Calculate thickness according to Weapon damage and trees killed
-	global.thickness = 20 + (global.TreesKilled * 2) + (global.Weapons[global.WeaponLevel][2] * 10)
+	global.thickness = 20 + (data.savedData["TreesKilled"] * 2) + (global.Weapons[data.savedData["WeaponLevel"]][2] * 10)
 	#How many lives has the branch left?
 	global.lives = global.thickness
 

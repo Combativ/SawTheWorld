@@ -12,14 +12,3 @@ func _process(delta):
 		position = up
 	else:
 		position = down
-	
-	
-	if Input.is_action_pressed("ui_up"):
-		position.y -= 1
-	if Input.is_action_pressed("ui_down"):
-		position.y += 1
-	if Input.is_action_pressed("ui_left"):
-		position.x -= 1
-	if Input.is_action_pressed("ui_right"):
-		position.x += 1
-	print(position)

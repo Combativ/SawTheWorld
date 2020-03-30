@@ -30,7 +30,7 @@ func _process(delta):
 
 
 			#Play sound accordingly to weapon and direction
-			var sound_hin = get_node("WeaponSounds/" + str(global.Weapons[global.WeaponLevel][0]) + "_hin")
+			var sound_hin = get_node("WeaponSounds/" + str(global.Weapons[data.savedData["WeaponLevel"]][0]) + "_hin")
 			#(randomize the pitch for variety)
 			sound_hin.set_pitch_scale(rand_range(0.95, 1.05))
 			sound_hin.play()
@@ -41,7 +41,7 @@ func _process(delta):
 
 
 			#Play sound accordingly to weapon and direction
-			var sound_zurueck = get_node("WeaponSounds/" + str(global.Weapons[global.WeaponLevel][0]) + "_zurueck")
+			var sound_zurueck = get_node("WeaponSounds/" + str(global.Weapons[data.savedData["WeaponLevel"]][0]) + "_zurueck")
 			#(randomize the pitch for variety)
 			sound_zurueck.set_pitch_scale(rand_range(0.95, 1.05))
 			sound_zurueck.play()
@@ -59,7 +59,7 @@ func calculate_points():
 	points = round(points)
 	#Multipliziere mit WeaponLevel für Fortschritt
 	#(WeaponLevel + 1 weil es bei erster Waffe 0 ist)
-	points = points * (global.Weapons[global.WeaponLevel][2])
+	points = points * (global.Weapons[data.savedData["WeaponLevel"]][2])
 	
 	return points
 	

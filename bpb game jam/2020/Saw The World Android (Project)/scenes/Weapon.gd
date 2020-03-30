@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	add_child(global.WeaponScenes[global.WeaponLevel].instance())
+	add_child(global.WeaponScenes[data.savedData["WeaponLevel"]].instance())
 
 
 func _on_branch_slash():
