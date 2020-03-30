@@ -1,14 +1,19 @@
 extends Area2D
 
+signal slashUp
+signal slashDown
 signal slash
+
 signal cut
 
 #Variables
 var xDistanceToMouse
-var branchWidth = 558 #Ausgemessen!
+#Distance to farthest side (left or right)
+#var cutWidth = max(abs(OS.get_window_size().x - position.x), position.x)
+var branchWidth = 559 #Ausgemessen!
 var mouseAboveBranch = false #Für branch_slash
 
-const MAXPOINTS = 10
+const MAXPOINTS = 20
 var points
 const MAXTIMEBONUS = 100
 var TimeBonus
@@ -18,15 +23,16 @@ func _ready():
 	$PointsStopwatch._reset_time()
 
 
-
 func _process(delta):
 	
-	#If tree is still alive
-	if global.lives > 0:
+	#If tree is still alive and mouse in game
+	if (global.lives > 0 &&
+	get_global_mouse_position().x <= ProjectSettings.get_setting("display/window/size/width") &&
+	get_global_mouse_position().x >= 0):
 		#Wenn die Maus über den Stamm fährt
 		if get_local_mouse_position().y < 0 and mouseAboveBranch == false:
 			mouseAboveBranch = true
-			emit_signal("slash")
+			emit_signal("slashUp")
 
 
 			#Play sound accordingly to weapon and direction
@@ -37,7 +43,7 @@ func _process(delta):
 
 		if get_local_mouse_position().y > 100 and mouseAboveBranch == true:  #ACHTUNG Hard-gecodete Zahl!
 			mouseAboveBranch = false
-			emit_signal("slash")
+			emit_signal("slashDown")
 
 
 			#Play sound accordingly to weapon and direction
@@ -46,10 +52,15 @@ func _process(delta):
 			sound_zurueck.set_pitch_scale(rand_range(0.95, 1.05))
 			sound_zurueck.play()
 
-
+func _on_branch_slashUp():
+	emit_signal("slash")
+	
+func _on_branch_slashDown():
+	emit_signal("slash")
 
 
 func calculate_points():
+	
 	
 	#Get x distance to mouse
 	xDistanceToMouse = abs(get_global_mouse_position().x - position.x)

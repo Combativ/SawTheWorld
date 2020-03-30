@@ -5,10 +5,14 @@ extends Sprite
 var up = Vector2(0, 0)
 var down = Vector2(110, 106)    #Magic numbers
 
-func _process(delta):
+func _ready():
+	#Connect signal slashUp and slashDown from branch to here
+	get_parent().get_parent().get_parent().connect("slashUp", self, "_on_branch_slashUp")
+	get_parent().get_parent().get_parent().connect("slashDown", self, "_on_branch_slashDown")
+
+
+func _on_branch_slashUp():
+	position = up
 	
-	#Move accordingly
-	if get_parent().get_local_mouse_position().y < 0:
-		position = up
-	else:
-		position = down
+func _on_branch_slashDown():
+	position = down

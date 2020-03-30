@@ -206,7 +206,6 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Tree" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 3 )
 
 [node name="trunk" type="AnimatedSprite" parent="Tree"]
@@ -215,7 +214,7 @@ animation = "Kirsch"
 centered = false
 
 [node name="branch" type="Area2D" parent="Tree"]
-position = Vector2( 521.548, 628.869 )
+position = Vector2( 521, 629 )
 z_index = 4
 script = ExtResource( 8 )
 __meta__ = {
@@ -486,6 +485,8 @@ script = ExtResource( 46 )
 [connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
 [connection signal="slash" from="Tree/branch" to="HUD" method="_on_branch_slash"]
+[connection signal="slashDown" from="Tree/branch" to="Tree/branch" method="_on_branch_slashDown"]
+[connection signal="slashUp" from="Tree/branch" to="Tree/branch" method="_on_branch_slashUp"]
 [connection signal="animation_finished" from="Tree/branch/Animation" to="Tree/branch" method="_on_Animation_animation_finished"]
 [connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
 [connection signal="mouse_entered" from="Menu/background/Upgrade" to="Menu/background/Upgrade" method="_on_Upgrade_mouse_entered"]

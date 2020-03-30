@@ -3,7 +3,6 @@ extends Node
 onready var vp = get_tree().get_root()
 onready var base_size = Vector2(1080, 1920)
 
-
 func _ready():
         # Use whichever you would like by default
 	#set_fullscreen()

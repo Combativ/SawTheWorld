@@ -3,15 +3,17 @@ extends Node
 #Preload the game to later instance it
 const GAME = preload("res://scenes/game.tscn")
 
+
 func _ready():
 	
 	#Start game
-	Restart_Game()
+	Start_Game()
 
 	#MUSIC
 	#Lautstärke verringern
 	$BackgroundMusic.set_volume_db(-10)
 	$BackgroundMusic.play()
+	
 
 
 func _on_Restart_pressed():
@@ -25,7 +27,7 @@ func _on_Restart_pressed():
 	$click.play()
 	
 	#Restart
-	Restart_Game()
+	Start_Game()
 	
 func _on_Upgrade_WeaponUpgraded():
 	#Play sound
@@ -36,7 +38,7 @@ func _on_Quit_pressed():
 	$click.play()
 
 
-func Restart_Game():
+func Start_Game():
 
 	#Instance/start the game
 	var game = GAME.instance()

@@ -5,10 +5,14 @@ func _ready():
 	show()
 	position = Vector2(-200, -950)
 
-func _process(delta):
-	#Change according to mouse position
-	if get_parent().get_local_mouse_position().y > 0:
-		set_frame(1)
-	else:
-		set_frame(0)
+	#Connect signal slashUp and slashDown from branch to here
+	get_parent().get_parent().connect("slashUp", self, "_on_branch_slashUp")
+	get_parent().get_parent().connect("slashDown", self, "_on_branch_slashDown")
+
+
+func _on_branch_slashUp():
+	set_frame(1)
+	
+func _on_branch_slashDown():
+	set_frame(0)
 	
