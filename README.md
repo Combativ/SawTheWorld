@@ -13,11 +13,9 @@ Most assets are released under CC BY-SA 4.0. Some of them are released under var
 
   All sounds are released under Public Domain except
 
-  knifescrapingwoodwhittling by edbles
-  License: CC BY 3.0
+  knifescrapingwoodwhittling by edbles, CC BY 3.0
 
-  snapping-wooden-fence-a by InspectorJ
-  License: CC BY 3.0
+  snapping-wooden-fence-a by InspectorJ, CC BY 3.0
 
 **Music**
 
