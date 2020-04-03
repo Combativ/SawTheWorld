@@ -4,23 +4,24 @@ The game executables as well as the godot source code for every three platforms 
 
 
 
-##Licences##
+## License
 
--Sounds-
+The code is released under GPL v3.0
+Most assets are released under CC BY-SA 4.0. Some of them are released under various other Creative Commons licenses or are Public Domain. (For further details see below.)
 
-  PD instead of
+**Sounds**
+
+  All sounds are released under Public Domain except
 
   knifescrapingwoodwhittling by edbles
-
   License: CC BY 3.0
 
   snapping-wooden-fence-a by InspectorJ
-
   License: CC BY 3.0
 
--Music-
+**Music**
 
   Music from https://filmmusic.io
   „Ebbs And Flows Preview“ by Kevin MacLeod (https://incompetech.com)
-  License: CC BY (http://creativecommons.org/licenses/by/4.0/)
+  CC BY (http://creativecommons.org/licenses/by/4.0/)
 
