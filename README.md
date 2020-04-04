@@ -26,8 +26,8 @@ Most assets are released under CC BY-SA 4.0. Some of them are released under var
   „Still Pickin“ by Kevin MacLeod (https://incompetech.com), CC BY 4.0
 
 ## Credits
-trytouseapencil (Art and Graphics)
+[trytouseapencil](https://github.com/trytouseapencil) (Art and Graphics)
 
-Combativ (Code)
+[Combativ](https://github.com/Combativ) (Code)
 
-JBWestside42, Dinock (Documentation and research)
+[JBWestside42](https://github.com/JBWestside42), [Dinock](https://github.com/Dinock) (Documentation and research)
