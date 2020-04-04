@@ -6,10 +6,7 @@ In this game you succeed by sawing off the branch you are literally sitting on. 
 ## Installation
 The game executables as well as the Godot source code for every three platforms (Windows, Linux, Android) can be found in "/bpb game jam/2020/"
 
-
-
 ## License
-
 The code is released under GPL v3.0.
 
 Most assets are released under CC BY-SA 4.0. Some of them are released under various other Creative Commons licenses or are Public Domain. (For further details see below.)
@@ -28,3 +25,9 @@ Most assets are released under CC BY-SA 4.0. Some of them are released under var
 
   „Still Pickin“ by Kevin MacLeod (https://incompetech.com), CC BY 4.0
 
+## Credits
+trytouseapencil (Art and Graphics)
+
+Combativ (Code)
+
+JBWestside42, Dinock (Documentation and research)
