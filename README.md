@@ -26,5 +26,5 @@ Most assets are released under CC BY-SA 4.0. Some of them are released under var
 
   Music from https://filmmusic.io
 
-  „Ebbs And Flows Preview“ by Kevin MacLeod (https://incompetech.com), CC BY 4.0
+  „Still Pickin“ by Kevin MacLeod (https://incompetech.com), CC BY 4.0
 
