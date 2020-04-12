@@ -1,5 +1,5 @@
-# Saw the World
-_Saw the World_ is a free, satirical open-source game about cutting down trees for no logical reason.
+# Saw The World
+_Saw The World_ is a free, satirical open-source game about cutting down trees for no logical reason.
 
 In this game you succeed by sawing off the branch you are literally sitting on. The faster you saw, the higher your score! Can you collect enough sawdust to unlock all upgrades?
 
