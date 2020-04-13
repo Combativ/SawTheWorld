@@ -1,0 +1,575 @@
+[gd_scene load_steps=65 format=2]
+
+[ext_resource path="res://scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Hintergrund.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Tree.gd" type="Script" id=3]
+[ext_resource path="res://sprites/trees/Standard_Baum.png" type="Texture" id=4]
+[ext_resource path="res://sprites/trees/Kirsch_Baum.png" type="Texture" id=5]
+[ext_resource path="res://sprites/trees/Eukalyptus_Baum.png" type="Texture" id=6]
+[ext_resource path="res://sprites/trees/Birken_Baum.png" type="Texture" id=7]
+[ext_resource path="res://scenes/branch.gd" type="Script" id=8]
+[ext_resource path="res://sprites/branches/Standard_Ast.png" type="Texture" id=9]
+[ext_resource path="res://sprites/branches/Kirsch_Ast.png" type="Texture" id=10]
+[ext_resource path="res://sprites/branches/Eukalyptus_Ast.png" type="Texture" id=11]
+[ext_resource path="res://sprites/branches/Birken_Ast.png" type="Texture" id=12]
+[ext_resource path="res://scenes/branchSprite.gd" type="Script" id=13]
+[ext_resource path="res://scenes/human.gd" type="Script" id=14]
+[ext_resource path="res://scenes/Weapon.gd" type="Script" id=15]
+[ext_resource path="res://sprites/holz.png" type="Texture" id=16]
+[ext_resource path="res://sounds/Holzbruch2_sound.wav" type="AudioStream" id=17]
+[ext_resource path="res://sounds/Holzbruch1_sound.wav" type="AudioStream" id=18]
+[ext_resource path="res://sounds/gameOver_sound.wav" type="AudioStream" id=19]
+[ext_resource path="res://scenes/Stopwatch.gd" type="Script" id=20]
+[ext_resource path="res://sounds/weapons/Fuchsschwanzsaege_hin.wav" type="AudioStream" id=21]
+[ext_resource path="res://sounds/weapons/Fuchsschwanzsaege_zurueck.wav" type="AudioStream" id=22]
+[ext_resource path="res://sounds/weapons/Kettensaege_hin.wav" type="AudioStream" id=23]
+[ext_resource path="res://sounds/weapons/Kettensaege_zurueck.wav" type="AudioStream" id=24]
+[ext_resource path="res://sounds/weapons/Kreissaege_hin.wav" type="AudioStream" id=25]
+[ext_resource path="res://sounds/weapons/Kreissaege_zurueck.wav" type="AudioStream" id=26]
+[ext_resource path="res://sounds/weapons/Taschenmesser_hin.wav" type="AudioStream" id=27]
+[ext_resource path="res://sounds/weapons/Taschenmesser_zurueck.wav" type="AudioStream" id=28]
+[ext_resource path="res://HUD.gd" type="Script" id=29]
+[ext_resource path="res://fonts/The Wild Breath of Zelda.otf" type="DynamicFontData" id=30]
+[ext_resource path="res://scenes/pointLabel.gd" type="Script" id=31]
+[ext_resource path="res://scenes/sawdustLabel.gd" type="Script" id=32]
+[ext_resource path="res://sprites/GUI/healthbar.png" type="Texture" id=33]
+[ext_resource path="res://scenes/Sprite.gd" type="Script" id=34]
+[ext_resource path="res://sprites/GUI/Button_Empty.png" type="Texture" id=35]
+[ext_resource path="res://scenes/Credits.gd" type="Script" id=36]
+[ext_resource path="res://fonts/planetbe.ttf" type="DynamicFontData" id=37]
+[ext_resource path="res://scenes/Menu.gd" type="Script" id=38]
+[ext_resource path="res://sprites/GUI/Menu_Background.png" type="Texture" id=39]
+[ext_resource path="res://scenes/Upgrade.gd" type="Script" id=40]
+[ext_resource path="res://sounds/Upgrade.wav" type="AudioStream" id=41]
+[ext_resource path="res://scenes/Restart.gd" type="Script" id=42]
+[ext_resource path="res://scenes/Quit.gd" type="Script" id=43]
+[ext_resource path="res://scenes/TimeBonusLabel.gd" type="Script" id=44]
+[ext_resource path="res://scenes/Highscore.gd" type="Script" id=45]
+[ext_resource path="res://scenes/TreesKilled.gd" type="Script" id=46]
+[ext_resource path="res://sounds/select.wav" type="AudioStream" id=47]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=48]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "Standard",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Kirsch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Eukalyptus",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Birken",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Standard",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Kirsch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Eukalyptus",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": false,
+"name": "Birken",
+"speed": 0.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 395.962, 175.891 )
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0182693, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 551, 629 ), Vector2( 551, 629 ), Vector2( 551, 2629 ) ]
+}
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 50.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 600, 0 )
+initial_velocity = 200.0
+initial_velocity_random = 0.8
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 10.0
+angle_random = 1.0
+scale = 0.2
+scale_random = 0.5
+
+[sub_resource type="DynamicFont" id=6]
+size = 128
+outline_size = 6
+outline_color = Color( 0.443137, 0.184314, 0.184314, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 30 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 92
+outline_size = 4
+outline_color = Color( 0.486275, 0.223529, 0.223529, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 30 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 79
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_char = 6
+font_data = ExtResource( 37 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 84
+extra_spacing_char = 6
+font_data = ExtResource( 37 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 64
+font_data = ExtResource( 37 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 96
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 20
+font_data = ExtResource( 30 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 108
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 6
+font_data = ExtResource( 30 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 68
+outline_size = 5
+outline_color = Color( 0.529412, 0.0784314, 0.0784314, 1 )
+extra_spacing_char = 6
+font_data = ExtResource( 30 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 64
+outline_size = 4
+outline_color = Color( 0.168627, 0.129412, 0.45098, 1 )
+extra_spacing_char = 6
+font_data = ExtResource( 30 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 43
+outline_size = 3
+outline_color = Color( 0.380392, 0.109804, 0.109804, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 30 )
+
+[node name="game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Environment" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="background" type="Sprite" parent="Environment"]
+z_index = -10
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Tree" type="Node2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 3 )
+
+[node name="trunk" type="AnimatedSprite" parent="Tree"]
+frames = SubResource( 1 )
+animation = "Kirsch"
+centered = false
+
+[node name="branch" type="Area2D" parent="Tree"]
+editor/display_folded = true
+position = Vector2( 521, 629 )
+z_index = 4
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="branchSprite" type="AnimatedSprite" parent="Tree/branch"]
+z_index = 7
+z_as_relative = false
+frames = SubResource( 2 )
+animation = "Standard"
+centered = false
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree/branch"]
+visible = false
+position = Vector2( 128, 80 )
+shape = SubResource( 3 )
+
+[node name="Animation" type="AnimationPlayer" parent="Tree/branch"]
+anims/fall = SubResource( 4 )
+
+[node name="human" type="Node2D" parent="Tree/branch"]
+position = Vector2( -1.29999, 28.6 )
+scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 14 )
+
+[node name="Weapon" type="Node2D" parent="Tree/branch/human"]
+z_index = 6
+z_as_relative = false
+script = ExtResource( 15 )
+
+[node name="sawdust" type="Particles2D" parent="Tree/branch/human/Weapon"]
+position = Vector2( 0, 100 )
+z_index = 1
+emitting = false
+amount = 400
+lifetime = 3.0
+visibility_rect = Rect2( -1000, -3000, 2000, 6000 )
+local_coords = false
+process_material = SubResource( 5 )
+texture = ExtResource( 16 )
+
+[node name="SawdustTimer" type="Timer" parent="Tree/branch/human/Weapon"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Holzbruch2" type="AudioStreamPlayer" parent="Tree/branch"]
+stream = ExtResource( 17 )
+volume_db = -5.0
+
+[node name="Knochenbruch1" type="AudioStreamPlayer" parent="Tree/branch"]
+stream = ExtResource( 18 )
+
+[node name="gameOver" type="AudioStreamPlayer" parent="Tree/branch"]
+stream = ExtResource( 19 )
+volume_db = -5.0
+
+[node name="PointsStopwatch" type="Node" parent="Tree/branch"]
+script = ExtResource( 20 )
+
+[node name="WeaponSounds" type="Node" parent="Tree/branch"]
+editor/display_folded = true
+
+[node name="Fuchsschwanzsaege_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+stream = ExtResource( 21 )
+volume_db = -10.0
+
+[node name="Fuchsschwanzsaege_zurueck" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+stream = ExtResource( 22 )
+volume_db = -10.0
+
+[node name="Kettensaege_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+stream = ExtResource( 23 )
+volume_db = -10.0
+
+[node name="Kettensaege_zurueck" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+stream = ExtResource( 24 )
+volume_db = -10.0
+
+[node name="Kreissaege_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+stream = ExtResource( 25 )
+volume_db = -10.0
+
+[node name="Kreissaege_zurueck" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+stream = ExtResource( 26 )
+volume_db = -10.0
+
+[node name="Taschenmesser_hin" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+stream = ExtResource( 27 )
+volume_db = -10.0
+
+[node name="Taschenmesser_zurueck" type="AudioStreamPlayer" parent="Tree/branch/WeaponSounds"]
+stream = ExtResource( 28 )
+volume_db = -10.0
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 29 )
+
+[node name="pointLabel" type="Label" parent="HUD"]
+margin_left = 4.31689
+margin_top = 131.84
+margin_right = 547.269
+margin_bottom = 326.84
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 1
+valign = 1
+script = ExtResource( 31 )
+
+[node name="sawdustLabel" type="Label" parent="HUD"]
+margin_left = 423.86
+margin_top = 85.2269
+margin_right = 962.86
+margin_bottom = 225.227
+custom_fonts/font = SubResource( 7 )
+text = "0"
+align = 2
+valign = 1
+script = ExtResource( 32 )
+
+[node name="lives" type="Sprite" parent="HUD"]
+z_index = -1
+texture = ExtResource( 33 )
+centered = false
+script = ExtResource( 34 )
+
+[node name="Holz" type="Sprite" parent="HUD"]
+position = Vector2( 1024.86, 162.238 )
+rotation = 0.268781
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 16 )
+
+[node name="CreditsLayer" type="CanvasLayer" parent="HUD"]
+editor/display_folded = true
+
+[node name="Credits" type="Button" parent="HUD/CreditsLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0.670588 )
+self_modulate = Color( 0.392157, 0.360784, 0.988235, 1 )
+margin_left = 885.896
+margin_top = 1844.13
+margin_right = 1821.9
+margin_bottom = 2016.13
+rect_scale = Vector2( 0.2, 0.4 )
+icon = ExtResource( 35 )
+flat = true
+script = ExtResource( 36 )
+
+[node name="Label" type="Label" parent="HUD/CreditsLayer/Credits"]
+margin_left = 63.9282
+margin_top = 20.8184
+margin_right = 467.928
+margin_bottom = 141.818
+rect_scale = Vector2( 2, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Credits"
+
+[node name="CreditsPanel" type="Panel" parent="HUD/CreditsLayer/Credits"]
+margin_left = -4429.0
+margin_top = -4610.0
+margin_right = -1732.0
+margin_bottom = 190.0
+rect_scale = Vector2( 2, 1 )
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="HUD/CreditsLayer/Credits/CreditsPanel"]
+margin_left = 199.0
+margin_top = 582.0
+margin_right = 2495.0
+margin_bottom = 4479.0
+custom_fonts/font = SubResource( 10 )
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+At vero eos et accusam et justo duo dolores et ea rebum.
+
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+
+At vero eos "
+align = 1
+autowrap = true
+
+[node name="Menu" type="CanvasLayer" parent="."]
+script = ExtResource( 38 )
+
+[node name="background" type="Sprite" parent="Menu"]
+position = Vector2( 541.48, 1260.12 )
+z_index = -1
+texture = ExtResource( 39 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Upgrade" type="Button" parent="Menu/background"]
+editor/display_folded = true
+margin_left = -465.498
+margin_top = 25.8811
+margin_right = 470.502
+margin_bottom = 197.881
+custom_fonts/font = SubResource( 11 )
+icon = ExtResource( 35 )
+flat = true
+script = ExtResource( 40 )
+
+[node name="UpgradeSound" type="AudioStreamPlayer" parent="Menu/background/Upgrade"]
+stream = ExtResource( 41 )
+
+[node name="UPGRADE" type="Label" parent="Menu/background/Upgrade"]
+margin_left = 24.0
+margin_top = 19.0
+margin_right = 911.0
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 12 )
+text = "Upgrade"
+align = 1
+valign = 1
+
+[node name="Restart" type="Button" parent="Menu/background"]
+editor/display_folded = true
+margin_left = -462.609
+margin_top = -162.158
+margin_right = 473.391
+margin_bottom = 9.84167
+icon = ExtResource( 35 )
+flat = true
+align = 0
+script = ExtResource( 42 )
+
+[node name="RESTART" type="Label" parent="Menu/background/Restart"]
+margin_left = 22.0
+margin_top = 22.0
+margin_right = 912.0
+margin_bottom = 139.0
+custom_fonts/font = SubResource( 12 )
+text = "Restart"
+align = 1
+valign = 1
+
+[node name="Quit" type="Button" parent="Menu/background"]
+editor/display_folded = true
+margin_left = -468.611
+margin_top = 211.445
+margin_right = 467.389
+margin_bottom = 383.445
+custom_fonts/font = SubResource( 11 )
+icon = ExtResource( 35 )
+flat = true
+script = ExtResource( 43 )
+
+[node name="QUIT" type="Label" parent="Menu/background/Quit"]
+margin_left = 20.0
+margin_top = 2.0
+margin_right = 909.0
+margin_bottom = 150.0
+custom_fonts/font = SubResource( 12 )
+text = "Quit"
+align = 1
+valign = 1
+
+[node name="youdied" type="Label" parent="Menu/background"]
+margin_left = -434.0
+margin_top = -404.0
+margin_right = 450.0
+margin_bottom = -160.0
+custom_fonts/font = SubResource( 13 )
+text = "Congratulations
+YOU DIED!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TimeBonusLabel" type="Label" parent="Menu"]
+margin_left = 281.575
+margin_top = 497.642
+margin_right = 846.575
+margin_bottom = 610.642
+custom_fonts/font = SubResource( 14 )
+text = "TIME BONUS:"
+valign = 1
+script = ExtResource( 44 )
+
+[node name="Highscore" type="Label" parent="Menu"]
+margin_left = 8.0
+margin_top = 6.0
+margin_right = 801.0
+margin_bottom = 89.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0.533333, 0.568627, 0.878431, 1 )
+text = "HIGHSCORE:"
+valign = 1
+autowrap = true
+script = ExtResource( 45 )
+
+[node name="TreesKilled" type="Label" parent="Menu"]
+margin_left = 541.848
+margin_top = 643.589
+margin_right = 1073.85
+margin_bottom = 721.589
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.878431, 0.419608, 0.419608, 1 )
+text = "TREES KILLED:"
+valign = 1
+autowrap = true
+script = ExtResource( 46 )
+
+[node name="select" type="AudioStreamPlayer" parent="Menu"]
+stream = ExtResource( 47 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+script = ExtResource( 48 )
+[connection signal="fall" from="Tree" to="Tree/branch" method="_on_Tree_fall"]
+[connection signal="cut" from="Tree/branch" to="Menu/TreesKilled" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="Menu/TimeBonusLabel" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_cut"]
+[connection signal="cut" from="Tree/branch" to="Menu" method="_on_branch_cut"]
+[connection signal="slash" from="Tree/branch" to="Tree/branch/human/Weapon" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="Tree" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="HUD/sawdustLabel" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="HUD/pointLabel" method="_on_branch_slash"]
+[connection signal="slash" from="Tree/branch" to="HUD" method="_on_branch_slash"]
+[connection signal="slashDown" from="Tree/branch" to="Tree/branch" method="_on_branch_slashDown"]
+[connection signal="slashUp" from="Tree/branch" to="Tree/branch" method="_on_branch_slashUp"]
+[connection signal="animation_finished" from="Tree/branch/Animation" to="Tree/branch" method="_on_Animation_animation_finished"]
+[connection signal="timeout" from="Tree/branch/human/Weapon/SawdustTimer" to="Tree/branch/human/Weapon" method="_on_SawdustTimer_timeout"]
+[connection signal="mouse_entered" from="HUD/CreditsLayer/Credits" to="HUD/CreditsLayer/Credits" method="_on_Credits_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/CreditsLayer/Credits" to="HUD/CreditsLayer/Credits" method="_on_Credits_mouse_exited"]
+[connection signal="mouse_entered" from="Menu/background/Upgrade" to="Menu/background/Upgrade" method="_on_Upgrade_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/background/Upgrade" to="Menu/background/Upgrade" method="_on_Upgrade_mouse_exited"]
+[connection signal="pressed" from="Menu/background/Upgrade" to="Menu/background/Upgrade" method="_on_Upgrade_pressed"]
+[connection signal="mouse_entered" from="Menu/background/Restart" to="Menu/background/Restart" method="_on_Restart_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/background/Restart" to="Menu/background/Restart" method="_on_Restart_mouse_exited"]
+[connection signal="mouse_entered" from="Menu/background/Quit" to="Menu/background/Quit" method="_on_Quit_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/background/Quit" to="Menu/background/Quit" method="_on_Quit_mouse_exited"]
+[connection signal="pressed" from="Menu/background/Quit" to="Menu/background/Quit" method="_on_Quit_pressed"]
+[connection signal="TimeBonusCalculated" from="Menu/TimeBonusLabel" to="Menu/Highscore" method="_on_TimeBonusLabel_TimeBonusCalculated"]
